@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="content">
         <div id="main-section" class="main-section">
@@ -9,7 +8,6 @@
                 </div>
                 <div class="deleteadd">
                     <button class="export" id="export" (click)="applyCampaign()">Campaign</button>
-                    <!-- Thêm modal hiển thị danh sách chiến dịch -->
                     <div class="modal" *ngIf="showApplyCampaignModal">
                         <h2>Choose Campaign</h2>
                         <ul>
@@ -21,91 +19,68 @@
                             </li>
                         </ul>
                         <button (click)="applyCampaignsToSelectedProducts()">Apply</button>
-                        <button class="cancelCampaign" (click)="closeCampaignModal()">Cancel</button> <!-- Cancel button -->
+                        <button class="cancelCampaign" (click)="closeCampaignModal()">Cancel</button>
                     </div>
-                  </div>
-                    <button class="export" id="export" (click)="export()">Export</button>
-                    <button class="add" id="add" (click)="showPopup = true">Add Product</button>
                 </div>
+                <button class="export" id="export" (click)="export()">Export</button>
+                <button class="add" id="add" (click)="showPopup = true">Add Product</button>
             </div>
-            <div class="buttonfilterframe">
-                <div class="filterframe">
-                    <div class="buttonfilter">
-                      <button id="All" [ngClass]="getButtonClass('All')" (click)="getProductByMode(0)">All Products</button>
-                      <button id="New" [ngClass]="getButtonClass('New')" (click)="getProductByMode(1)">New</button>
-                      <button id="Upload" [ngClass]="getButtonClass('Upload')" (click)="getProductByMode(2)">Upload</button>
-                      <button id="Delete" [ngClass]="getButtonClass('Delete')" (click)="getProductByMode(3)">Bin</button>
-                    </div>
-                  </div>
-            </div>
-            <div class="maintable">
-                <table>
-                    <thead>
-                        <tr>
-                            <th><input type="checkbox"></th>
-                            <th>Product</th>
-                            <th>Category</th>
-                            <th>Stock</th>
-                            <th>Price</th>
-                            <th>Discount</th>
-                            <th>Status</th>
-                            <th>Image</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let product of displayProduct; let i = index">
-                            <td><input (click)="toggleSelection(product.product._id)" type="checkbox"></td>
-                            <td>
-                                <ng-container>
-                                    {{ product.product.productName }}
-                                </ng-container>
-                            </td>
-                            <td>{{ product.categoryName }}</td>
-                            <td>
-                                <ng-container>
-                                    {{ product.product.stock }}
-                                </ng-container>
-                            </td>
-                            <td>
-                                <ng-container>
-                                    {{ product.product.price }}
-                                </ng-container>
-                            </td>
-                            <td>
-                                <ng-container>
-                                    {{ product.product.discount }}
-                                </ng-container>
-                            </td>
-                            <td><span [ngClass]="{ 'status': true, 'deleted': product.status === 'Deleted', 'uploaded': product.status === 'Uploaded' }">{{ product.statusValue }}</span></td>
-                            <td>
-                                <ng-container>
-                                    <img class="image" src="{{product.product.image}}">
-                                </ng-container>
-                            </td>
-                            <td>
-                                <button *ngIf="!isDelete" class="delete" (click)="remove(product.product._id)">Remove</button>
-                                <button *ngIf="isDelete" class="delete" (click)="delete(product.product._id)">Delete</button>
-                                <button class="edit" (click)="openUpdatePopup(product)">Edit</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            
-            <div class="navigation">
-                <span>Showing 1-2 from 4</span>
-                <div>
-                    <input type="button" value="<">
-                    <input type="button" value="1">
-                    <input type="button" value="2">
-                    <input type="button" value=">">
+        </div>
+        <div class="buttonfilterframe">
+            <div class="filterframe">
+                <div class="buttonfilter">
+                    <button id="All" [ngClass]="getButtonClass('All')" (click)="getProductByMode(0)">All Products</button>
+                    <button id="New" [ngClass]="getButtonClass('New')" (click)="getProductByMode(1)">New</button>
+                    <button id="Upload" [ngClass]="getButtonClass('Upload')" (click)="getProductByMode(2)">Upload</button>
+                    <button id="Delete" [ngClass]="getButtonClass('Delete')" (click)="getProductByMode(3)">Bin</button>
                 </div>
             </div>
         </div>
+        <div class="maintable">
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Stock</th>
+                        <th>Price</th>
+                        <th>Discount</th>
+                        <th>Status</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of displayProduct; let i = index">
+                        <td><input (click)="toggleSelection(product.product._id)" type="checkbox"></td>
+                        <td>{{ product.product.productName }}</td>
+                        <td>{{ product.categoryName }}</td>
+                        <td>{{ product.product.stock }}</td>
+                        <td>{{ product.product.price }}</td>
+                        <td>{{ product.product.discount }}</td>
+                        <td><span [ngClass]="{ 'status': true, 'deleted': product.status === 'Deleted', 'uploaded': product.status === 'Uploaded' }">{{ product.statusValue }}</span></td>
+                        <td><img class="image" src="{{product.product.image}}"></td>
+                        <td>
+                            <button *ngIf="!isDelete" class="delete" (click)="remove(product.product._id)">Remove</button>
+                            <button *ngIf="isDelete" class="delete" (click)="delete(product.product._id)">Delete</button>
+                            <button class="edit" (click)="openUpdatePopup(product)">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="navigation">
+            <span>Showing 1-2 from 4</span>
+            <div>
+                <input type="button" value="<">
+                <input type="button" value="1">
+                <input type="button" value="2">
+                <input type="button" value=">">
+            </div>
+        </div>
     </div>
-
+</div>
 
 <app-popup *ngIf="showPopup" [showPopup]="showPopup" [categories]="categories" (close)="showPopup = false" (addProduct)="onAddProduct($event)"></app-popup>
 <app-popup *ngIf="showPopupUpdate"
