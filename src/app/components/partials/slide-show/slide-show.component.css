@@ -1,0 +1,147 @@
+
+  
+  .slider{
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 1s;
+    cursor: pointer;
+  }
+  
+
+  
+  /*css for manual slide navigation*/
+  
+  .navigation-manual {
+    position: absolute;
+    bottom: 30px; /* Đặt bottom để các nút navigation nằm ở dưới cùng của slider */
+    left: 50%; /* Đặt left để canh chỉnh nút navigation vào giữa */
+    transform: translateX(-50%); /* Dịch chuyển vị trí sang trái để canh chỉnh vào giữa */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn {
+    border: 2px solid #00B207;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .manual-btn:not(:last-child) {
+    margin-right: 40px;
+  }
+  
+  .manual-btn:hover {
+    background: #00B207;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+    margin-left: -40%;
+  }
+  
+
+  /*css for automatic navigation*/
+  
+  .navigation-auto {
+    position: absolute;
+    bottom: 30px; /* Đặt bottom để các nút navigation nằm ở dưới cùng của slider */
+    left: 50%; /* Đặt left để canh chỉnh nút navigation vào giữa */
+    transform: translateX(-50%); /* Dịch chuyển vị trí sang trái để canh chỉnh vào giữa */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navigation-auto div {
+    border: 2px solid #00B207;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  
+  .navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+  }
+  
+  .navigation-auto div:hover {
+    background: #00B207;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #00B207;
+  }
+  
+  #radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #00B207;
+  }
+  
+  #radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #00B207;
+  }
+
+
+  /*button*/
+  .buy-now {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #ffffff; /* Màu nền của button */
+    stroke: #00B207;
+    color: #00B207; /* Màu chữ của button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+  }
+  
+  
+  /* Áp dụng animation vào nút */
+  .buy-now {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buy-now:hover {
+    background-color: #00B207;
+    color: #fff;
+  }
+  
+  .bouncing {
+    animation: bounce 0.8s ease;
+  }
+  
+  
+  

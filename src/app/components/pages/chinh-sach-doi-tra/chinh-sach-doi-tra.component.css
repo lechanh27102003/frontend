@@ -1,0 +1,32 @@
+.navigation-bar {
+    margin-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    background-image: url('../../../../assets/image/navback.png');
+    background-size: 1900px 120px; /* Chỉnh kích thước của background */
+    background-repeat: no-repeat;
+    position: relative;
+    height: 120px; /* Đặt chiều cao cố định */
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+    margin-right: 5px;
+  }
+  
+  .nav-link:hover {
+    color: #00B207;
+  }
+  
+  .nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+  }
+  
+  .separator {
+    margin-right: 5px;
+    color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+  }

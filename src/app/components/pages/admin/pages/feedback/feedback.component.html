@@ -1,0 +1,40 @@
+
+
+<div class="container">
+    <h1>Feedback</h1>
+    <table class="filter">
+        <div class="buttonfilterframe">
+            <div class="filterframe">
+              <div class="buttonfilter">
+                    <td><button>All Feedback</button></td>
+                    <td><button>Wait</button></td>
+                    <td><button>Replied</button></td>
+                </div>
+            </div>
+        </div>
+    </table>
+</div>
+<div>
+    <table class="maintable">
+        <thead>
+            <tr>
+                <th>Feedback</th>
+                <th>Status</th>
+                <th>Post Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Feedback of list_Feedback" >
+                <td>
+                    <div >
+                        <div  (click)="onReplyClick(Feedback)">{{Feedback.Name}}</div>
+                        <div  [innerHTML]="Feedback.Content" ></div>
+                    </div>
+                </td>
+                <td>{{Feedback.Status}}</td>
+                <td>{{Feedback.Date}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

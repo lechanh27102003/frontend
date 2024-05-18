@@ -1,0 +1,67 @@
+<div class="navigation-bar">
+  <a routerLink="/">
+    <img src="../../../../assets/image/homepage.png" alt="Homepage" class="nav-image">
+</a>
+<span class="separator">&gt;</span>
+  <a routerLink="/product" class="nav-link" >Product</a> 
+</div>
+<span class="title"><h4>{{ title }}</h4></span>
+<hr>
+<div class="outline">
+	<div class="filter">
+		<span style="display: flex; justify-content: center;" class="bold-green">Filter Product</span>
+		<div class="star-filter">
+			<span class="bold-text">Star</span>
+			<input type="radio" id="starOption1" name="starOptions" (click)="radioStarChanged('Up')"
+				[checked]="selectedStarOption === 'Up'">
+			<label for="starOption1">Up</label>
+
+			<input type="radio" id="starOption2" name="starOptions" (click)="radioStarChanged('Down')"
+				[checked]="selectedStarOption === 'Down'">
+			<label for="starOption2">Down</label>
+
+			<div class="star-rating">
+				<span class="star" *ngFor="let star of [1, 2, 3, 4, 5]" (click)="setRating(star)">
+					<i class="fa fa-star" [ngClass]="{'filled': star <= selectedRating}"></i>
+				</span>
+			</div>
+
+		</div>
+		<hr>
+		<div class="price">
+			<span class="bold-text">Price</span>
+			<input type="radio" id="priceOption1" name="priceOptions" (click)="radioPriceChanged('Up')"
+				[checked]="selectedPriceOption === 'Up'">
+			<label for="priceOption1">Up</label>
+
+			<input type="radio" id="priceOption2" name="priceOptions" (click)="radioPriceChanged('Down')"
+				[checked]="selectedPriceOption === 'Down'">
+			<label for="priceOption2">Down</label>
+
+			<div class="price-range">
+				<input class="input" type="number" [(ngModel)]="minPrice" placeholder="Min Price">
+				<input class="input" type="number" [(ngModel)]="maxPrice" placeholder="Max Price">
+			</div>
+			<button class="button-apply" (click)="applyPriceRangeFilter()">Apply</button>
+		</div>
+		<hr>
+		<div>
+
+			<span class="bold-text">Categories</span>
+
+			<div class="box-select">
+				<mat-checkbox (click)="onCheckAllChange()" [checked]="checkAll">All</mat-checkbox>
+				<mat-checkbox *ngFor="let option of options" (click)="onOptionChange(option)" [(ngModel)]="option.selected" class="checkbox-item">
+					{{ option.name }}
+				</mat-checkbox>
+			</div>
+			
+		</div>
+
+	</div>
+
+	<div style="margin-left: 10px; border-right: 1px solid black;"></div>
+	<div class="container">
+		<product-card *ngFor="let product of sortedProducts" [product]="product"></product-card>
+	</div>
+</div>

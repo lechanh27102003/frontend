@@ -1,0 +1,238 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+input [type="text"] {
+    border:none;
+}
+
+.image {
+    width: 550px;
+    height: auto;
+}
+
+.detail {
+    width: 500px;
+}
+
+.infor {
+    display: flex;
+}
+
+.title {
+    padding: 5px;
+    display: block;
+}
+
+.discount-price {
+    margin-left: 5px;
+    padding: 5px;
+    color: #00b307;
+}
+
+.star {
+    padding: 5px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.calculate {
+    border: 1px solid #ccc;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.quantity {
+    display: flex;
+}
+
+.addToCart {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #00b307;
+    border: 1px solid #00b307;
+    color: white;
+    cursor: pointer;
+}
+
+.minus,
+.plus {
+    background-color: whitesmoke;
+    border: none;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.quatityNumber {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 50px; /* Adjust width as needed */
+    display: inline-block; /* To ensure the span behaves as inline-block */
+}
+.quatityNumber input {
+    border: none;
+    width: 100%;
+    text-align: center; /* Center the text inside the input */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.cart {
+    margin-left: 10px;
+}
+
+.favorite {
+    margin-top: 3px;
+    height: 30px;
+    width: 30px;
+    background-color: #c4eebb;
+    border-radius: 50%;
+    border: 1px solid #c4eebb;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.break-line {
+    width: 70%;
+    margin-top: -11px;
+}
+
+.tab-control {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.border-bottom {
+    margin: 10px;
+    border-bottom: 3px solid #00b307;
+    cursor: pointer;
+}
+
+.bottom {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.feedbackTab {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+}
+
+.stock {
+    margin-top: 5px;
+    height: 15px;
+    justify-items: stretch;
+    display: block;
+    background-color: #c4eebb;
+    color: green;
+    padding: 2px 4px;
+    font-size: 12px;
+}
+
+.headtitle {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.star-rating {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.star {
+    cursor: pointer;
+}
+
+.fa-star {
+    color: #ccc;
+}
+
+.filled {
+    color: gold;
+}
+
+.out-stock {
+    margin-top: 5px;
+    height: 15px;
+    justify-items: stretch;
+    display: block;
+    background-color: #f09797;
+    color: red;
+    padding: 2px 4px;
+    font-size: 12px;
+}
+
+.price {
+    text-decoration: line-through;
+    color: #888;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.navigation-bar {
+    margin-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    background-image: url('../../../../../assets/image/navback.png');
+    background-size: 1900px 120px; /* Chỉnh kích thước của background */
+    background-repeat: no-repeat;
+    position: relative;
+    height: 120px; /* Đặt chiều cao cố định */
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+    margin-right: 5px;
+  }
+  
+  .nav-link:hover {
+    color: #00B207;
+  }
+  
+  .nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+
+  }
+  
+  .separator {
+    margin-right: 5px;
+    color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+  }
+
+  
+  .separator {
+    margin-right: 5px;
+    color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+  }
+
+
+.related-product {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.related {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; /* Điều chỉnh giá trị margin-top tùy theo khoảng cách mong muốn */
+    margin-bottom: 20px; /* Điều chỉnh giá trị margin-bottom tùy theo khoảng cách mong muốn */
+    font-weight: bold; /* In đậm chữ RELATED PRODUCT */
+}
+

@@ -1,0 +1,175 @@
+/* Thiết lập các thuộc tính mặc định cho tất cả các phần tử */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h4.title {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    display: flex;
+    font-size: 32px;
+    color:#00B207;
+    justify-content: center;
+
+}
+/* Thiết lập nền cho body */
+body {
+    background-color: white;
+}
+
+/* Các phần tử card-container và card */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    width: 400px;
+    height: 450px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+/* Ảnh bên trong thẻ card */
+.card img {
+    width: 400px;
+    height: 300px;
+}
+a {
+    text-decoration: none; /* Loại bỏ gạch chân */
+    color: black; /* Đặt màu chữ là đen */
+}
+
+a:hover {
+    text-decoration: underline; /* Hiển thị gạch chân khi di chuột qua */
+}
+
+.card-content h4 {
+    font-weight: bold; /* Chữ đậm */
+    margin-left: 10px; /* Khoảng cách từ bên trái */
+}
+
+
+/* Liên kết trong card-content */
+.card-content a {
+    color: #00B207;
+    font-size: 16px;
+    line-height: 1.3;
+    text-decoration: none;
+}
+.card-content p {
+    margin: 10px 0 10px 10px; /* Khoảng cách top, right, bottom, left */
+    color: #666666; /* Màu chữ xám */
+}
+
+.card-content {
+  position: relative; /* Đặt vị trí tương đối */
+  width: 100%; /* Đặt chiều rộng là 100% để nó căn giữa theo phần tử cha */ /* Căn giữa nội dung bên trong */
+}
+
+.card-content .btn {
+  color: white; /* Chữ trắng */
+  background-color: #00B207; /* Màu nền #00B207 */
+  border: none; /* Loại bỏ border */
+  border-radius: 8px; /* Bo góc */
+  display: block; /* Hiển thị nút dạng block */
+  width: 30%; /* Chiều rộng */
+  margin: 40px auto; /* Căn giữa, margin top là 20px và thêm margin bottom */
+  text-align: center; /* Căn giữa chữ */
+  padding: 10px 0; /* Khoảng cách bên trong */
+}
+
+
+
+
+
+
+
+
+
+/* Điều chỉnh chiều rộng của ô trong bảng */
+td.width-adjust {
+    width: 424px;
+    position: relative;
+}
+
+/* Điều chỉnh vị trí của ô tìm kiếm trong ô width-adjust */
+.width-adjust input[type="search"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.image-icon {
+    width: 100px;
+    margin-right: 10px;
+    position: relative;
+    border-radius: var(--br-7xs);
+    height: 70px;
+    object-fit: cover;
+  }
+  .blog {
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 var(--padding-9xs);
+  }
+  .nhng-loi-tri {
+    width: 312px;
+    position: relative;
+    line-height: 150%;
+    font-weight: 500;
+    display: inline-block;
+  }
+.calendar{
+    color: #666666;
+}
+/* Điều chỉnh hiển thị của thẻ h2 */
+h2 {
+  text-align: center; /* Canh giữa văn bản */ /* Chữ đậm */
+  margin: px 0; /* Khoảng cách top và bottom là 20px, left và right tự động */
+  position: relative; /* Tạo vị trí tương đối để có thể sử dụng sau này */
+  font-size: 30px;
+}
+
+.navigation-bar {
+    margin-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    background-image: url('../../../../assets/image/navback.png');
+    background-size: 1900px 120px; /* Chỉnh kích thước của background */
+    background-repeat: no-repeat;
+    position: relative;
+    height: 120px; /* Đặt chiều cao cố định */
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+    margin-right: 5px;
+  }
+  
+  .nav-link:hover {
+    color: #00B207;
+  }
+  
+  .nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+  }
+  
+  .separator {
+    margin-right: 5px;
+    color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+  }
+
+  

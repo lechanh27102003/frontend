@@ -1,0 +1,208 @@
+/* contact-form.component.css */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: Arial, sans-serif; /* Replace with your desired font */
+  }
+  i {
+    margin-top:20px;
+    font-size: 20px;
+  }
+  .horizontal {
+    width: 100%; /* Chiều rộng đầy đủ */
+    border-bottom: 1px solid #ccc; /* Đường kẻ ngang */
+    margin-bottom: 30px; /* Khoảng cách với các phần tử khác */
+  }
+  
+  .info-card{
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    width: 20%; /* Adjust the width as per your layout */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Simple shadow for depth */
+  }
+  .form-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-right: 10%;
+    border-radius: 4px;
+    width: 48%; /* Adjust the width as per your layout */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Simple shadow for depth */
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .info-item p {
+    margin-left: 10px;
+  }
+  
+  .icon {
+    font-size: 24px; /* Adjust size accordingly */
+    width: 24px; /* Use if icons are svg or images */
+    height: 24px; /* Use if icons are svg or images */
+    /* Icons should be added via background-image if they are not font icons */
+  }
+  
+  .icon-location {
+    background-image: url('/path-to-your-icons/location-icon.svg');
+  }
+  
+  .icon-email {
+    background-image: url('/path-to-your-icons/email-icon.svg');
+  }
+  
+  .icon-phone {
+    background-image: url('/path-to-your-icons/phone-icon.svg');
+  }
+  
+  .form-card h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group input{
+    width: 80%;
+	height: 30px;
+	border: 1px solid #ebebeb;
+	padding-left: 20px;
+	font-size: 16px;
+	color: #b2b2b2;
+	border-radius: 4px;
+  }
+  .form-group textarea{
+    width: 80%;
+	border: 1px solid #ebebeb;
+	padding-left: 20px;
+	font-size: 16px;
+	color: #b2b2b2;
+	border-radius: 4px;
+    font-family: Arial, sans-serif;
+  }
+  .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .form-card table {
+    width: 92%; /* Set the table width to 80% of the form's width */
+    margin-left: 0px; /* Centering the table by setting left and right margins */
+    margin-right: auto;
+  }
+  
+  .form-card th {
+    font-weight: normal; /* Removes bold styling from th elements */
+    text-align: left; /* Aligns text to the left */
+    padding-right: 20px; /* Adds spacing between the columns */
+  }
+  .form-card table, .form-card th, .form-card td {
+    border-collapse: collapse; /* Ensures that table borders are collapsed into a single border */
+    border-spacing: 0; /* Removes space between cells */
+  }
+  .btn-primary {
+    background:#00b307;
+    padding: 10px 25px;
+    border: none;
+    height: 44px;
+    border-radius: 42px; 
+    margin-top:10px;
+    width:85%;
+    outline:none;
+    font-size: 15px;;
+    color:#fff;
+    letter-spacing:1px;
+    cursor: pointer;
+  }
+  
+
+  .form-group input,
+.form-group textarea {
+    width: 80%;
+    height: 30px;
+    border: 1px solid #ebebeb;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #b2b2b2; /* Default color */
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group input:not(:placeholder-shown),
+.form-group textarea:not(:placeholder-shown) {
+    color: #000; /* Black text color when input is focused or not empty */
+}
+
+/* Specific styles for textarea height */
+.form-group textarea {
+    height: auto; /* Overrides the 30px height for textareas */
+}
+.navigation-bar {
+  margin-top: 20px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  background-image: url('../../../../assets/image/navback.png');
+  background-size: 1900px 120px; /* Chỉnh kích thước của background */
+  background-repeat: no-repeat;
+  position: relative;
+  height: 120px; /* Đặt chiều cao cố định */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+  margin-right: 5px;
+}
+
+.nav-link:hover {
+  color: #00B207;
+}
+
+.nav-image {
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.separator {
+  margin-right: 5px;
+  color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+}
+.map{
+  margin-bottom: 20px;
+}
+.map h2{
+  font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  text-align: center;
+}
+.title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  font-size: 32px;
+  color:#00B207;
+  justify-content: center;
+}
+

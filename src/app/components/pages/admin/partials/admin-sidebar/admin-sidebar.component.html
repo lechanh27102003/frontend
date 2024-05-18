@@ -1,0 +1,15 @@
+<div class="sidebar" [ngClass]="{'close': sidebarService.isSidebarClosed}">
+  <div class="logo">
+    <i class="fab fa-trade-federation"></i>
+    <span class="logo-name">Plantique</span>
+  </div>
+
+  <ul class="nav-list">
+    <li *ngFor="let menuItem of menuItems">
+      <a [routerLink]="menuItem.route" routerLinkActive="active" class="icon-link">
+        <i [ngClass]="menuItem.icon"></i>
+        <span class="text" [class.hide-text]="sidebarService.isSidebarClosed">{{ menuItem.name }}</span>
+      </a>
+    </li>
+  </ul>
+</div>

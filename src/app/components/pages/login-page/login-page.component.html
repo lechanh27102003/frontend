@@ -1,0 +1,59 @@
+<div class="container" [ngClass]="{ 'active': isSignUpActive }">
+    <div class="form-container sign-up" *ngIf="isSignUpActive">
+      <form [formGroup]="signUpForm">
+        <h1>Create Account</h1>
+        <input type="text" placeholder="Name" formControlName="name">
+        <span *ngIf="signUpForm.get('name')?.errors?.['required'] && signUpForm.get('name')?.dirty" 
+              class="text-red-500 mt-1 text-sm">*Name is required</span>
+  
+        <input type="email" placeholder="Email" formControlName="email">
+        <span *ngIf="signUpForm.get('email')?.errors?.['required'] && signUpForm.get('email')?.dirty" 
+              class="text-red-500 mt-1 text-sm">*Email is required</span>
+        <span *ngIf="signUpForm.get('email')?.errors?.['email'] && signUpForm.get('email')?.dirty" 
+              class="text-red-500 mt-1 text-sm">*Invalid email format</span>
+  
+        <input type="password" placeholder="Password" formControlName="password">
+        <span *ngIf="signUpForm.get('password')?.errors?.['required'] && signUpForm.get('password')?.dirty" 
+              class="text-red-500 mt-1 text-sm">*Password is required</span>
+  
+        <button type="button" (click)="signUp()" [disabled]="signUpForm.invalid" 
+                [class.disabled]="signUpForm.invalid">Sign Up</button>
+      </form>
+    </div>
+  
+    <div class="form-container sign-in" *ngIf="!isSignUpActive">
+      <form [formGroup]="signInForm">
+        <h1>Sign In</h1>
+        <input type="email" placeholder="Email" formControlName="email">
+        <span *ngIf="signInForm.get('email')?.errors?.['required'] && signInForm.get('email')?.dirty" 
+              class="text-red-500 mt-1 text-sm">*Email is required</span>
+        <span *ngIf="signInForm.get('email')?.errors?.['email'] && signInForm.get('email')?.dirty" 
+              class="text-red-500 mt-1 text-sm">*Invalid email format</span>
+  
+        <input type="password" placeholder="Password" formControlName="password">
+        <span *ngIf="signInForm.get('password')?.errors?.['required'] && signInForm.get('password')?.dirty" 
+              class="text-red-500 mt-1 text-sm">*Password is required</span>
+  
+        <button type="button" (click)="signIn()" [disabled]="signInForm.invalid" 
+                [class.disabled]="signInForm.invalid">Sign In</button>
+  
+        <div class="forget-password"><a routerLink="/forget-password">Forget Password?</a></div>
+      </form>
+    </div>
+  
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>Welcome Back!</h1>
+          <p>Enter your personal details to use all site features</p>
+          <button class="hidden" type="button" (click)="toggleForm(false)">Sign In</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Hello, Friend!</h1>
+          <p>Register with your personal details to use all site features</p>
+          <button class="hidden" type="button" (click)="toggleForm(true)">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

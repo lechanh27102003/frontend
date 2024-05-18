@@ -1,0 +1,42 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contact-details {
+    margin-top: 20px;
+  }
+  
+  .contact-details div {
+    margin-bottom: 10px;
+  }
+  
+  .contact-details label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  .navigation-bar {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    margin-right: 5px;
+}
+
+.nav-link:hover {
+    color: #00B207;
+}
+
+.nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.separator {
+    margin-right: 5px;
+}

@@ -1,0 +1,95 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 3px; /* Đặt khoảng cách giữa các cột là 3px */
+  margin: 0 auto; /* Căn giữa theo chiều ngang */
+  max-width: 1200px; /* Giới hạn chiều rộng tối đa của khối */
+  text-align: center; /* Căn giữa nội dung trong mỗi cột */
+  overflow: hidden;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  font-size: 32px;
+  color:#00B207;
+  justify-content: center;
+}
+.about-grid img{
+  max-width: 80%;
+  height: auto;
+}
+
+.col, .colleft {
+  padding: -15px; /* Thêm padding để tạo khoảng trống xung quanh nội dung */
+  padding-bottom: 20px;
+}
+
+.left{
+  text-align: left;
+  margin-left: -10px;
+  margin-right: 10%;
+  margin-top: 20%;
+}
+
+.colleft{
+  text-align: left;
+  margin-left: -10px;
+  margin-right: 10%;
+  margin-top: 20%;
+}
+.right{
+  text-align: left;
+  margin-bottom: 30px;
+  margin-left: 10%;
+}
+ 
+.leftimg{
+  margin-right: 25%;
+}
+
+h1{
+  text-align: center;
+  font-size: 40px;
+  color: #00B207;
+}
+
+.navigation-bar {
+  margin-top: 20px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  background-image: url('../../../../assets/image/navback.png');
+  background-size: 1900px 120px; /* Chỉnh kích thước của background */
+  background-repeat: no-repeat;
+  position: relative;
+  height: 120px; /* Đặt chiều cao cố định */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+  margin-right: 5px;
+}
+
+.nav-link:hover {
+  color: #00B207;
+}
+
+.nav-image {
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.separator {
+  margin-right: 5px;
+  color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+}
+
+h2{
+  
+  color: #00B207;
+}

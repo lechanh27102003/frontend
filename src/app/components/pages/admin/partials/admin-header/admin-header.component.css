@@ -1,0 +1,72 @@
+/* Header */
+.admin-header {
+    height: 42px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    transition: width 0.5s ease; /* Hiệu ứng khi mở/rút gọn sidebar */
+}
+
+/* Các phần tử trong header */
+.menu-icon {
+    cursor: pointer;
+    color: #333;
+    font-size: 24px;
+    margin-right: 10px;
+    z-index: 100;
+}
+
+.admin-header-content {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.avatar img {
+    border-radius: 50%;
+    width: 50px; /* Đặt kích thước mong muốn */
+    height: 50px; /* Đặt kích thước mong muốn */
+  }
+
+.user-info {
+    margin-right: 10px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown ul {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 15px; 
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    list-style: none;
+    z-index: 999;
+    font-size: 14px;
+}
+
+.dropdown:hover ul {
+    display: block;
+}
+
+.dropdown ul li {
+    margin-bottom: 5px;
+}
+
+.dropdown ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown ul li a:hover {
+    color: #f00;
+}

@@ -1,0 +1,59 @@
+<div class="navigation-bar">
+    <a routerLink="/">
+        <img src="../../../../assets/image/homepage.png" alt="Homepage" class="nav-image">
+    </a>
+    <span class="separator">&gt;</span>
+    <a routerLink="/order-search" class="nav-link">Order Search</a>
+</div>
+
+<h4 class ="title">SEARCH ORDER</h4>
+<hr style="margin-top: 20px; border: none; border-top: 1px solid #ccc; width: 100%;"> 
+<div class="order-search-container">
+    <input type="text" [(ngModel)]="orderId" (keyup.enter)="searchOrder()" placeholder="Enter Order ID" class="search-input" autofocus>
+
+    <div *ngIf="order" class="order-details">
+        <div class="left-column">
+            <fieldset>
+                <legend>Basic Information</legend>
+                <p><label>Order ID: </label> <span>{{ order._id }}</span></p>
+                <p><label>Order Date: </label> <span>{{formatDateString(order.orderDate)}}</span></p>
+                <p><label>Username: </label> <span>{{ order.userName }}</span></p>
+            </fieldset>
+            <fieldset>
+                <legend>Products</legend>
+                <ul>
+                    <li *ngFor="let product of order.products">
+                        <img [src]="product.productImage" alt="{{ product.productName }}" class="product-image">
+                        <span><b>{{ product.productName }}</b> (Quantity: {{ product.quantity }}, Price: {{ product.price | currency:'VND' }})</span>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Costs</legend>
+                <p><label>Subtotal: </label> <span>{{ order.subTotal | currency:'VND'}}</span></p>
+                <p><label>Shipping Fee: </label> <span>{{ order.shippingFee | currency:'VND'}}</span></p>
+                <p><label>Discount: </label> <span>{{ order.discountPrice | currency:'VND'}}</span></p>
+                <p><label>Total: </label> <span>{{ order.totalPrice | currency:'VND'}}</span></p>
+            </fieldset>
+        </div>
+        <div class="right-column">
+            <fieldset>
+                <legend>Shipping Information</legend>
+                <p><label>Full Name: </label> <span>{{ order.shipTo.fullName }}</span></p>
+                <p><label>Phone: </label> <span>{{ order.shipTo.phone }}</span></p>
+                <p><label>Address: </label> <span>{{ order.shipTo.address }}</span></p>
+                <div><label>Email:</label> <span>{{ order.shipTo.email }}</span></div>
+                <p><label>Note: </label> <span>{{ order.shipTo.note }}</span></p>
+                <div class="address-details">
+                    <p><label>City: </label> <span>{{ order.shipTo.city }}</span></p>
+                    <p><label>District: </label> <span>{{ order.shipTo.district }}</span></p>
+                    <p><label>Ward: </label> <span>{{ order.shipTo.ward }}</span></p>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Order Management</legend>
+                <p><label>Status: </label> <span>{{ order.status }}</span></p>
+            </fieldset>
+        </div>
+    </div>
+</div>

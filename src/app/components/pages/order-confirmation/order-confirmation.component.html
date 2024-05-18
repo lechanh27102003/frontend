@@ -1,0 +1,50 @@
+<div class="navigation-bar">
+    <a routerLink="/">
+        <img src="../../../../assets/image/homepage.png" alt="Homepage" class="nav-image">
+    </a>
+    <span class="separator">&gt;</span>
+    <a routerLink="/shipping-info" class="nav-link" >Checkout</a>  
+    <span class="separator">&gt;</span>
+    <a routerLink="/order-confirmation" class="nav-link">Order Confirmation</a>
+</div>
+<section class="order-confirmation spad">
+    <div class="container">
+        <div class="order-confirmation__content">
+            <div class="order-confirmation__details">
+                <h2>Order Confirmation</h2>
+                <h4>Shipping Information</h4>
+                <ul class="confirmation-list">
+                    <li><strong>Full Name:</strong> {{ shippingInfo.fullName }}</li>
+                    <li><strong>Province/City:</strong> {{ shippingInfo.city }}</li>
+                    <li><strong>District:</strong> {{ shippingInfo.district }}</li>
+                    <li><strong>Ward:</strong> {{ shippingInfo.ward }}</li>
+                    <li><strong>Address:</strong> {{ shippingInfo.address }}</li>
+                    <li><strong>Email:</strong> {{ shippingInfo.email }}</li>
+                    <li><strong>Phone Number:</strong> {{ shippingInfo.phone }}</li>
+                    <li><strong>Notes:</strong> {{ shippingInfo.note }}</li>
+                </ul>
+                <h4>Order Details</h4>
+                <ul class="confirmation-cart-items">
+                    <li *ngFor="let item of orderItems">
+                        <div class="confirmation-cart-item">
+                            <img [src]="item.product.image" alt="{{ item.product.productName }}">
+                            <div>
+                                <h5>{{ item.product.productName }}</h5>
+                                <span>Qty: {{ item.quantity }}</span>
+                                <span>Total: {{ item.price| currency:'VND' }}</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="order-total">
+                    <p>Subtotal: <span>{{ subtotal | currency:'VND' }}</span></p>
+                    <p>Shipping Fee: <span>đ30,000</span></p>
+                    <p>Discount: <span>{{ discount | currency:'VND' }}</span></p>
+                    <p><strong>Payment Method:</strong> {{ paymentMethod | titlecase }}</p>
+                    <h4>Total: <span>{{ total | currency:'VND' }}</span></h4>
+                </div>
+                <button type="button" class="site-btn" (click)="confirmOrder()">Confirm Order</button>
+            </div>
+        </div>
+    </div>
+</section>

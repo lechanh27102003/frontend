@@ -1,0 +1,75 @@
+.create-campaign-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.create-campaign-container h2 {
+    margin-bottom: 20px;
+}
+
+.create-campaign-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.create-campaign-container input[type="text"],
+.create-campaign-container input[type="date"],
+.create-campaign-container input[type="number"],
+.create-campaign-container select {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.create-campaign-container input[type="text"],
+.create-campaign-container input[type="date"],
+.create-campaign-container input[type="number"] {
+    display: inline-block;
+}
+
+.create-campaign-container select {
+    width: calc(50% - 10px);
+}
+
+.create-campaign-container .campaign-info,
+.create-campaign-container .time-manage,
+.create-campaign-container .promotion-category,
+.create-campaign-container .product-category,
+.create-campaign-container .total-uses {
+    margin-bottom: 20px;
+}
+
+.create-campaign-container .buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.create-campaign-container .buttons button:last-child {
+    margin-right: 0;
+}
+
+.create-campaign-container .buttons button:hover {
+    background-color: #0056b3;
+}
+.btn-primary {
+    /* Đảm bảo nút chiếm đầy đủ chiều rộng của phần tử cha */
+    width: fit-content; /* Chiều rộng của nút sẽ phụ thuộc vào nội dung */
+    background-color: #2C742F !important; /* Màu nền */
+    color: #ffffff; /* Màu chữ */
+    border: none; /* Xóa đường viền */
+    border-radius: 5px; /* Bo góc */
+    padding: 10px 20px; /* Độ lớn của padding */
+    cursor: pointer; /* Hiển thị icon con trỏ khi di chuột qua */
+    font-size: 14px; /* Kích thước chữ */
+    font-weight: 600; /* Độ đậm của chữ */
+}

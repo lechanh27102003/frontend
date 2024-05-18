@@ -1,0 +1,240 @@
+
+<div class="container">
+  <div class="content">
+      <div id="main-section" class="main-section">
+          <div name="title" class="title-content">
+              <div class="title-container">
+                  <h1>Promotion</h1>
+              </div>
+              <div class="deleteadd">
+                  <button class="add" id="add" (click)="openPopup()">Add Promotion</button>
+              </div>
+          </div>
+          <div class="buttonfilterframe">
+              <div class="filterframe">
+                <div class="buttonfilter">
+                    <button id="codePromotion" [ngClass]="{'active': codeBtnActive}" (click)="loadCodes()">Code Promotion</button>
+                    <button id="campaignPromotion" [ngClass]="{'active': campaignBtnActive}" (click)="loadCampaigns()">Campaign Promotion</button>
+                </div>
+              </div>
+              <fieldset class="search">
+                  <i class="fas fa-search"></i>
+                  <input type="text" name="searchpromo" placeholder="Search...">
+              </fieldset>
+          </div>
+          <div class="maintable" *ngIf="showCodeTable">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Promotion</th>
+                          <th>Type</th>
+                          <th>Uses</th>
+                          <th>Status</th>
+                          <th>Start</th>
+                          <th>End</th>
+                          <th></th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let code of codes">
+                          <td> {{ code.name }} {{ code.description }}</td>
+                          <td>{{ code.promotionType }}</td>
+                          <td>{{ code.numOfUses }}/{{ code.totalUses }}</td>
+                          <td>
+                            <span [ngClass]="{
+                              'status': true,
+                              'expired': getStatus(code) === 'Expired',
+                              'on-promotion': getStatus(code) === 'On promotion'
+                            }">{{ getStatus(code) }}</span>
+                          </td>
+                          <td>{{ code.startDate | date:'yyyy-MM-dd'}}</td>
+                          <td>{{ code.endDate | date:'yyyy-MM-dd'}}</td>
+                          <td><button class="edit" (click)="viewDetails(code)">View Details</button></td>
+                          <td><button class="delete" (click)="deleteCode(code)">Delete</button></td>
+
+                      </tr>
+                  </tbody>
+              </table>
+          </div>            
+          <div class="maintable" *ngIf="showCampaignTable">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let campaign of campaigns">
+                  <td>{{ campaign.name }}</td>
+                  <td>{{ campaign.description }}</td>
+                  <td>{{ campaign.startDate | date:'yyyy-MM-dd' }}</td>
+                  <td>{{ campaign.endDate | date:'yyyy-MM-dd'}}</td>
+                  <td>
+                    <span [ngClass]="{
+                      'status': true,
+                      'expired': getStatus(campaign) === 'Expired',
+                      'on-promotion': getStatus(campaign) === 'On promotion'
+                    }">{{ getStatus(campaign) }}</span>
+                  </td>
+                  <td>
+                    <button class="edit" (click)="viewDetailsCampaign(campaign)">View Details</button>
+                    <button class="delete" (click)="deleteCampaign(campaign)">Delete</button>
+                    <!-- Thêm button edit để mở form chỉnh sửa -->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="navigation">
+            <span>Showing 1-2 from 4</span>
+            <div>
+                <input type="button" value="<">
+                <input type="button" value="1">
+                <input type="button" value="2">
+                <input type="button" value=">">
+            </div>
+        </div>
+      </div>
+      <div class="overlay" *ngIf="popupService.showOverlay">
+          <div class="popup" id="popupContainer">
+              <div>
+                  <h2>Add Promotion</h2>
+                  <button class="option1" (click)="openCreateCode()">
+                      <table>
+                          <tr>
+                              <td rowspan="2"><i class="fas fa-code"></i></td>
+                              <td>
+                                  <h3>Add Promotion Code</h3>
+                                  <p>Customers will enter this discount code when making payment</p>
+                              </td>
+                          </tr>
+                      </table>
+                  </button>
+                  <button class="option2" (click)="openCreateCampaign()">
+                      <table>
+                          <tr>
+                              <td rowspan="2"><i class="fas fa-tags"></i></td>
+                              <td>
+                                  <h3>Add Promotion Campaign</h3>
+                                  <p>Customers will receive an automatic discount on their order</p>
+                              </td>
+                          </tr>
+                      </table>
+                  </button>
+                  <button class="close-btn" (click)="closePopup()">Close</button>
+              </div>
+          </div>
+      </div>
+
+      
+      <div class="modal" tabindex="-1" role="dialog" id="promotionModal" *ngIf="showDetails && selectedCode">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Promotion Code Details</h5>
+                      <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form #editForm="ngForm" (ngSubmit)="saveChanges()">
+                          <div class="form-group">
+                              <label for="editName">Name:</label>
+                              <input type="text" id="editName" name="editName" [(ngModel)]="selectedCode.name" class="form-control" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="editDescription">Description:</label>
+                              <input type="text" id="editDescription" name="editDescription" [(ngModel)]="selectedCode.description" class="form-control" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="editPromotionType">Promotion Type:</label>
+                              <input type="text" id="editPromotionType" name="editPromotionType" [(ngModel)]="selectedCode.promotionType" class="form-control" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="editstartDate">Start Date:</label>
+                            <input type="date" id="editstartDate" name="editstartDate" [(ngModel)]="selectedCode.startDate" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="editendDate">End Date:</label>
+                          <input type="date" id="editendDate" name="editendDate" [(ngModel)]="selectedCode.endDate" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="editdiscountAmount">Discount Amount:</label>
+                        <input type="number" id="editdiscountAmount" name="editdiscountAmount" [(ngModel)]="selectedCode.discountAmount" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="edittotalUses">Total Uses:</label>
+                      <input type="number" id="edittotalUses" name="edittotalUses" [(ngModel)]="selectedCode.totalUses" class="form-control" required>
+                  </div>
+                          <button type="submit" class="btn btn-primary">Save Changes</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Modal cho chi tiết và chỉnh sửa chiến dịch -->
+<div class="modal" tabindex="-1" role="dialog" id="campaignModal" *ngIf="editCampaignMode && selectedCampaign">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Promotion Campaign Details</h5>
+          <button type="button" class="close" (click)="cancelEdit()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editCampaignForm="ngForm" (ngSubmit)="saveChangesCampaign()">
+            <div class="form-group">
+              <label for="editCampaignName">Name:</label>
+              <input type="text" id="editCampaignName" name="editCampaignName" [(ngModel)]="selectedCampaign.name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="editCampaignDescription">Description:</label>
+              <input type="text" id="editCampaignDescription" name="editCampaignDescription" [(ngModel)]="selectedCampaign.description" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="editCampaignStartDate">Start Date:</label>
+              <input type="date" id="editCampaignStartDate" name="editCampaignStartDate" [(ngModel)]="selectedCampaign.startDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="editCampaignEndDate">End Date:</label>
+              <input type="date" id="editCampaignEndDate" name="editCampaignEndDate" [(ngModel)]="selectedCampaign.endDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="editCampaignPromotionType">Promotion Type:</label>
+                <input type="text" id="editCampaignPromotionType" name="editCampaignPromotionType" [(ngModel)]="selectedCampaign.promotionType" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="editCampaignFixedPrice">Fixed Price:</label>
+                <input type="text" id="editCampaignFixedPrice" name="editCampaignFixedPrice" [(ngModel)]="selectedCampaign.fixedPrice" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="editCampaignDiscountLevel">Discount Level:</label>
+                <input type="text" id="editCampaignDiscountLevel" name="editCampaignDiscountLevel" [(ngModel)]="selectedCampaign.discountLevel" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="editCampaignAppliedObject">Applied Object:</label>
+                <input type="text" id="editCampaignAppliedObject" name="editCampaignAppliedObject" [(ngModel)]="selectedCampaign.appliedObject" class="form-control" required>
+              </div>
+
+              
+            <!-- Thêm các trường khác cho chỉnh sửa thông tin chiến dịch -->
+  
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+<app-create-code></app-create-code>
+<app-create-campaign></app-create-campaign>

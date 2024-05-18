@@ -1,0 +1,40 @@
+
+.qr-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start of the flex container */
+    height: 100vh;
+    text-align: center;
+    padding-top: 0vh; /* Adjust this value to move the content closer or further from the top */
+}
+
+.qr-code-image {
+    margin: 10px 0;
+    width: 100%; /* Optional: adjust based on previous feedback */
+    max-width: 500px;
+}
+
+.qr-code-image img {
+    width: 100%; /* Ensures the image is responsive within its container */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.site-btn {
+    background: #00b307;
+    padding: 10px 25px;
+    border: none;
+    height: 44px;
+    margin-top: 0px;
+    width: 20%; /* Relative to the container's width */
+    min-width: 150px; /* Ensures minimum readability and functionality */
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* For a smoother hover effect */
+}
+
+.site-btn:hover {
+    background-color: #008f06; /* Darker on hover for better user interaction feedback */
+}

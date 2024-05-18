@@ -1,0 +1,130 @@
+/* CSS Styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px;
+}
+
+.box {
+    background-color: #d3dfd8;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recent-orders {
+    margin: 20px;
+}
+
+.recent-orders table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-orders th, .recent-orders td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.recent-orders th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.shortcut {
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+}
+
+.shortcut a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.shortcut a:hover {
+    background-color: #45a049;
+}
+
+.btn{
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #f0f0f0;
+    margin-left: 10px;
+    cursor: pointer;
+    width: 600px;
+    height: 200px;
+    stroke: none;
+}
+
+.btn:hover{
+    background-color: #45a049;
+    color: #f0f0f0;
+}
+
+.btn:active{
+    background-color: #45a049;
+    color: #f0f0f0;
+}
+
+.data{
+    font-size: 20px;
+}
+
+h2, th{
+    color: #042e04;
+}
+
+.navigation-bar {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    margin-right: 5px;
+}
+
+.nav-link:hover {
+    color: #00B207;
+}
+
+.nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.separator {
+    margin-right: 5px;
+}
+.parent-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 80vh;}
+.parent-container-2{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 150px;
+    height: 80vh;
+}
+
+iframe {
+    margin: auto;
+    display: block;}
+

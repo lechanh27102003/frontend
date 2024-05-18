@@ -1,0 +1,62 @@
+<div class="navigation-bar">
+    <a routerLink="/">
+        <img src="../../../../assets/image/homepage.png" alt="Homepage" class="nav-image">
+    </a>
+    <span class="separator">&gt;</span>
+    <a routerLink="/product" class="nav-link" >Product</a> 
+</div>
+<div class="container">
+	<div class="infor">
+		<div><img class="image" src="{{ product.image }}" /></div>
+		<div class="detail">
+			<div class="headtitle">
+				<span class="title"><b> {{ product.productName }} </b>
+				</span>
+				<span *ngIf="product.stock > 0" class="stock">
+					In Stock
+				</span>
+				<span *ngIf="product.stock == 0" class="out-stock">
+					Out of Stock
+				</span>
+			</div>
+			<span class="star" *ngFor="let star of [1, 2, 3, 4, 5]">
+				<i class="fa fa-star" [ngClass]="{'filled': star <= hoveredRating || star <= rating}"></i>
+			</span>
+			<div style="display: flex;">
+				<div *ngIf="product.discount > 0"><b class="price">{{ product.price | currency:'VND' }}</b></div>
+				<div><b class="discount-price">{{ discountPrice | currency:'VND' }}</b></div>
+			</div>
+
+			<hr>
+			<hr>
+			<div class="quantity">
+				<div class="calculate">
+					<button class="minus" (click)="subtractQuantity()"><i class="fa-solid fa-minus"></i></button>
+					<span class="quatityNumber"><input type="text" [(ngModel)]="quantity"></span>
+					<button class="plus" (click)="plusQuantity()"><i class="fa-solid fa-plus"></i></button>
+				</div>
+				<button class="addToCart" (click)="addToCart()">Add to Cart</button>
+			</div>
+			<hr>
+			<div><b class="category">Category</b>: {{ category?.[0]?.categoryName }}</div>
+		</div>
+	</div>
+</div>
+
+<div class="tab-control">
+	<div [ngClass]="isDescriptionTab ? 'border-bottom' : 'bottom'"><span (click)="openDescriptionTab()">Description</span>
+	</div>
+	<div [ngClass]="isFeedbackTab ? 'border-bottom' : 'bottom'"><span (click)="openFeedbackTab()">Customer
+			Feedback</span></div>
+</div>
+
+<hr class="break-line">
+
+<product-description [product]="product" *ngIf="isDescriptionTab"></product-description>
+<product-feedback class="feedbackTab" [feedbacks]="feedbacks" *ngIf="isFeedbackTab"></product-feedback>
+
+<hr style="margin-top: 20px;" class="break-line">
+<span class="related" >RELATED PRODUCT</span>
+<div class="related-product">
+	<product-card *ngFor="let product of relatedProducts" [product]="product"></product-card>
+</div>

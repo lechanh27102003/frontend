@@ -1,0 +1,84 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="top-menu.component.css" />
+    <title>Header1</title>
+  </head>
+<body>
+  <div class="header">Contact: 0366370098 | Fast Shipping | Customer support 24/7 | Easy to return</div>
+  <div class="container">
+      <div class="logo2">
+          <a routerLink="/"><img src="/assets/image/logo 2.png" alt="Logo" style="width:200px; height:50px;"></a>
+      </div>
+      <form id="TimKiem" (ngSubmit)="onSearch()">
+        <i class="fas fa-search"></i>
+        <input class = "search" type="text" placeholder="Search" [(ngModel)]="searchTerm" name="searchTerm">
+        <button type="submit">Search</button>
+    </form>
+
+      <div class="right-section">
+        <div class="cart-wrapper">
+          <a routerLink="cart-page" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count" *ngIf="cartItemsCount > 0">{{ cartItemsCount }}</span>
+          </a>
+      </div>
+          
+          <ng-container *ngIf="isLoggedIn; else loginSection">
+              <div class="account-info" (mouseenter)="toggleDropdown(true)" (mouseleave)="toggleDropdown(false)">
+                  
+                  <span [routerLink]="['my-account']" [class.active]="isDropdownOpen"> <i class="fa fa-user"></i>Hi {{ userName }}</span>
+              </div>
+          </ng-container>
+
+          <ng-template #loginSection>
+              <div class="signin-container">
+                <a href="login" class="signin-link">Sign In/Sign Up</a>
+              </div>
+          </ng-template>
+      </div>
+  </div>
+  
+    <div class="menu-bar">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+       
+
+        <li><a routerLink="product-client/0" routerLinkActive="active">Product<i class="fas fa-caret-down"></i></a>
+
+            <div class="dropdown-menu">
+                <ul>
+                  <li><a routerLink="product-client/1" routerLinkActive="active">Noodles</a></li>
+                  <li><a routerLink="product-client/2"routerLinkActive="active">Dried food</a></li>
+                  <li><a routerLink="product-client/3" routerLinkActive="active">Tea and coffee</a></li>
+                  <li><a routerLink="product-client/4" routerLinkActive="active">Nuts</a></li>
+                </ul>
+              </div>
+        
+        </li>
+
+        <li><a routerLink="contact" routerLinkActive="active">Customer Service <i class="fas fa-caret-down"></i></a>
+      
+          <div class="dropdown-menu">
+              <ul>
+                <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>
+                <li><a routerLink="chinh-sach-van-chuyen" routerLinkActive="active">Shipping policy</a></li>
+                <li><a routerLink="chinh-sach-doi-tra" routerLinkActive="active">Return policy</a></li>
+                <li><a routerLink="phuong-thuc-thanh-toan" routerLinkActive="active">Payment method</a></li>
+                <li><a routerLink="huong-dan-mua-hang" routerLinkActive="active">Shopping guide</a></li>
+                <li><a routerLink="chinh-sach-bao-mat" routerLinkActive="active">Privacy policy</a></li>
+                <li><a routerLink="terms">Terms and conditions</a></li>
+                <li><a routerLink="inspection">Inspection policy</a></li>
+                
+              </ul>
+            </div>
+      </li>
+      <li><a routerLink="/about-us" routerLinkActive="active">About Us</a></li>
+      <li><a routerLink="/tin-tuc" routerLinkActive="active">Blog</a></li>
+      <li><a routerLink="/order-search" routerLinkActive="active">Search Order</a></li>
+      </ul>
+    </div>
+
+
+  </body>

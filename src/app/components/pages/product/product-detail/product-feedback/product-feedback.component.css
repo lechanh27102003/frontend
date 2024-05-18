@@ -1,0 +1,85 @@
+.container {
+    width: 100%;
+}
+
+.feedback {
+    display: block;
+    padding: 15px;
+}
+
+.infor {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.star {
+    display: block;
+}
+
+.content {
+    flex: 1;
+}
+
+.time {
+    margin-top: 40px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.feedback:hover .content {
+    opacity: 0.8;
+}
+
+.flex {
+    display: flex;
+    border-bottom: 1px solid #aaa;
+    justify-content: space-between;
+}
+
+.loadMore {
+    margin: 15px 0;
+}
+
+.load {
+    padding: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 20px;
+    background-color: #c5dfc6;
+    border: 1px solid #afdfb1;
+    color: rgb(32, 209, 26);
+    cursor: pointer;
+}
+.star-rating {
+    display: flex;
+  }
+  
+  .star {
+    cursor: pointer;
+  }
+  
+  .fa-star {
+    color: #ccc;
+  }
+  
+  .filled {
+    color: gold;
+  }
+  .fb-image {
+    width: 200px;
+    height: auto;
+    display: block;
+  }

@@ -1,0 +1,18 @@
+<div class="navigation-bar">
+    <a routerLink="/">
+        <img src="../../../../assets/image/homepage.png" alt="Homepage" class="nav-image">
+    </a> 
+    <span class="separator">&gt;</span>
+    <a routerLink="/tin-tuc" class="nav-link" >Blog</a>
+</div>
+<h2>SINGLE BLOG</h2>
+<hr style="margin-top: 20px; border: none; border-top: 1px solid #ccc; width: 100%;">
+<div class="single-blog" *ngIf="blog">
+    <img class="image-icon" [src]="blog.image" alt="Blog Image">
+    <p class="calendar">Create Date: {{ formatDateString(blog.createDate)}}</p>
+    <h2 class="highlight">{{ blog.title }}</h2>
+    <hr class="line"> <!-- Đường line ngang -->
+    <div class="content text blog-content">
+        <p>{{ blog.content }}</p>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+.row {
+  height: 100px;
+}
+.navigation-bar {
+  margin-top: 20px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  background-image: url('../../../../assets/image/navback.png');
+  background-size: 1900px 120px; /* Chỉnh kích thước của background */
+  background-repeat: no-repeat;
+  position: relative;
+  height: 120px; /* Đặt chiều cao cố định */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+  margin-right: 5px;
+}
+
+.nav-link:hover {
+  color: #00B207;
+}
+
+.nav-image {
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.separator {
+  margin-right: 5px;
+  color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+}
+.container {
+  display: flex;
+  height: 100%;
+  margin: 0 50px;
+}
+
+.sidebar-area {
+  width: 200px;
+  padding: 10px;
+  margin-top: 30px;
+  box-sizing: border-box; 
+}
+.sidebar{
+  width: 200px;
+  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  border: 1px solid #E6E6E6;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(123, 123, 123, 0.1); 
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.sidebar-area a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  display: block;
+  padding: 20px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-area a.active, a:hover {
+  background-color: #EDF2EE; /* Màu hover */
+}
+
+/* Khi link được chọn (active), giữ màu nền */
+.sidebar-area  a:visited, a.active {
+  background-color: #EDF2EE;
+  font-weight: bold;
+}
+
+.sidebar-area  a:first-child:hover {
+  background-color: white;
+}
+
+.main-content {
+  flex: 1; /* Chia phần còn lại của flexbox */
+  padding: 20px;
+  box-sizing: border-box; /* Bao gồm padding trong kích thước */
+  overflow-y: hidden; /* Tạo thanh cuộn dọc nếu nội dung quá lớn */
+}

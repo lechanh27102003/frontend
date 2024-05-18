@@ -1,0 +1,331 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #FFFFFF;
+    transition: var(--trans-02);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    display: flex;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section {
+    background-color: #fbfbfc;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Header styles */
+.admin-header {
+    height: 42px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Title styles */
+.title-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main-section h1 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #333843;
+}
+
+.main-section .nav {
+    font-weight: 500;
+    font-size: 14px;
+    color: #2B572E;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Button styles */
+.delete,
+.add {
+    width: 140px;
+    height: 40px;
+    background: #F0F1F3;
+    display: inline-block;
+    margin-left: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.005em;
+    color: #1A1A1A;
+    border: 0px;
+    cursor: pointer;
+}
+
+.add {
+    background: #2C742F;
+    color: #FFFFFF;
+}
+
+.delete:active,
+.add:active {
+    transform: translateY(2px);
+}
+
+/* Filter styles */
+.buttonfilterframe {
+    display: flex;
+    justify-content: space-between; /* Aligns children (search and status filter) on opposite ends */
+    align-items: center; /* Centers children vertically */
+    width: 100%; /* Ensures the container spans the full width of its parent */
+    margin-top: 20px; /* Adds some margin at the top for spacing */
+    padding: 0 20px; /* Adds padding on the sides */
+}
+
+/* Search styles */
+.search {
+    display: flex;
+    align-items: center;
+    padding: 2px 12px;
+    gap: 4px;
+    width: 320px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 1px solid #E0E2E7;
+    border-radius: 8px;
+}
+
+.search input {
+    border: 0px solid #E0E2E7;
+    width: 300px;
+    height: 32px;
+}
+.search input:focus {
+    outline: none; /* Xóa viền khi ô input được focus */
+}
+
+
+.filterframe {
+    border: 1px solid #E0E2E7;
+    border-radius: 8px;
+    width:fit-content;
+
+}
+.spinner {
+    width: 30px;
+    height: 30px;
+    margin-left: auto; /* Đẩy spinner về bên phải */
+}
+
+
+
+.buttonfilter button {
+    padding: 6px 12px;
+    gap: 8px;
+    width: 126px;
+    height: 32px;
+    background: #ffffff;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.005em;
+    color: #667085;
+    border: 0px;
+    cursor: pointer;
+}
+.buttonfilter button:visited {
+    background: #2C742F;
+    color: #FFFFFF;
+}
+.buttonfilter button:active {
+    background: #2C742F;
+    color: #FFFFFF;
+    transform: translateY(1px);
+}
+.buttonfilter button:focus {
+    outline: none; 
+    background: #2C742F;
+    color: #FFFFFF;
+}
+
+/* Search styles */
+
+
+.search input {
+    border: 1px solid #E0E2E7;
+    width: 300px;
+    height: 32px;
+}
+.search input:focus {
+    border: none; /* Xóa viền khi ô input được focus */
+}
+
+/* Table styles */
+.maintable {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.maintable table {
+    margin-top: 24px;
+    width: 100%;
+    border: 1px solid #F0F1F3;
+    border-collapse: collapse;
+}
+
+.maintable thead {
+    font-size: 14px;
+    color: #333843;
+    background-color: #eff1f5;
+    height: 56px;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.maintable tbody {
+    font-weight: 300;
+    line-height: 10px;
+    color: #667085;
+    text-align: left;
+    background-color: white;
+}
+
+.maintable tbody tr {
+    border-bottom: 1px solid #E0E2E7; 
+    margin-left: 10%;
+  /* Đường kẻ ngang giữa các hàng */
+}
+
+.maintable tbody td {
+    padding: 12px ; /* Khoảng cách giữa nội dung và mép của ô */
+    font-size: 14px; /* Kích thước chữ cho nội dung */
+   text-align: center;
+}
+
+.status-filter {
+    display: flex; /* Ensures the select element aligns properly */
+   
+    border-radius: 8px;
+    padding: 2px 12px; /* Adds some padding inside the dropdown */
+}
+
+.Cancelled {
+    background-color: #FDF1E8;
+    color: #EA4B48;
+}
+.Finished {
+    background-color: #E7F4EE;
+    color: #0D894F;
+}
+
+.Processing {
+    background-color: #f9f1e3;
+    color: #FFA500;
+}
+.Delivering {
+    background-color: #f0eff8;
+    color: #0004ff;
+}
+/* In your order-list.component.css */
+.autocomplete-dropdown {
+    border: 1px solid #ccc;
+    border-top: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .autocomplete-dropdown div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .autocomplete-dropdown div:hover {
+    background-color: #f1f1f1;
+  }
+  
+
+
+  .pagination {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #667085;
+    text-align: left;
+    flex: 1; /* Kéo dãn phần tử để đẩy các nút và dấu "..." sang phải */
+}
+
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Đảm bảo các nút và dấu "..." được căn chỉnh về phía cuối bên phải */
+}
+
+.pagination-buttons button,
+.pagination-buttons .dots {
+    width: 32px;
+    height: 32px;
+    background: #B4CCB4;
+    border-radius: 8px;
+    border: 0px;
+    cursor: pointer;
+    margin-left: 2px; /* Đặt khoảng cách giữa các nút và dấu "..." */
+}
+
+.pagination-buttons button:first-child {
+    margin-left: 0; /* Không có khoảng cách bên trái nút đầu tiên */
+}
+
+.pagination-buttons button:active,
+.pagination-buttons button:visited,
+.pagination-buttons button:focus {
+    outline: none;
+    color: #ffffff;
+    background: #2C742F;
+    transform: translateY(1px);
+}
+.pagination-buttons button.active {
+    background: #2C742F;
+    color: #FFFFFF;
+    border: 1px solid #2C742F; /* Hoặc một định nghĩa style nào đó bạn muốn dùng để nổi bật nút đang active */
+}
+
+.pagination-buttons .dots {
+    /* Style cho dấu "..." nếu bạn muốn nó khác biệt so với nút */
+    font-size: 14px; /* Đặt font size cho dấu "..." nếu cần */
+    color: #667085; /* Đặt màu cho dấu "..." nếu cần */
+    background: transparent; /* Dấu "..." không có nền */
+    width: auto; /* Để dấu "..." không bị giới hạn bởi kích thước cố định */
+    height: auto; /* Để dấu "..." không bị giới hạn bởi kích thước cố định */
+    cursor: default; /* Dấu "..." không có hành vi như một nút */
+}
+
+/* Nếu không muốn dấu "..." có margin bên trái, bạn có thể loại bỏ margin-left từ style .dots */

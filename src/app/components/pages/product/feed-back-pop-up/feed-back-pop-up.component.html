@@ -1,0 +1,29 @@
+<div class="popup-container">
+    <span class="title">WRITING REVIEW</span>
+    <form (ngSubmit)="submitAllForms()">
+        <ng-container *ngFor="let product of listProduct; let i = index">
+            <div> {{product.productName}} </div>
+            <form>
+                <div class="star-rating" (mouseleave)="resetStarState(i)">
+                    <span class="star" *ngFor="let star of [1, 2, 3, 4, 5]" 
+                        (mouseenter)="highlightStars(star, i)" 
+                        (click)="setRating(star, i)">
+                        <i class="fa fa-star" [ngClass]="{'filled': star <= hoveredRating[i] || star <= rating[i]}"></i>
+                    </span>
+                </div>
+                <textarea [formControl]="feedbackControls[i]"></textarea>
+                <div class="productImage">
+                    <div class="newImage">
+                        <label for="productImage">Product Image: </label>
+                        <input type="file" id="productImage" (change)="onFileSelected($event, i)" accept="image/*" required>
+                    </div>
+                    <img class="image" *ngIf="imageUrl[i]" [src]="imageUrl[i]" alt="Product Image" width="100">
+                </div>
+            </form>
+        </ng-container>
+        <div class="button">
+            <button style="margin-bottom: 10px; margin-right: 10px;" type="submit">Submit All</button>
+            <button style="margin-bottom: 10px; margin-right: 10px;" type="button" (click)="closePopup()">Cancel</button>
+        </div>
+    </form>
+</div>

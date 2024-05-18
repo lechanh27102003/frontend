@@ -1,0 +1,117 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cleaner font */
+    background: #eeeeee; /* Lighter background to reduce contrast */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px; /* Limit max width for better readability */
+    margin: 40px auto; /* More vertical margin for better framing */
+    background: #ffffff;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06); /* Softer shadow */
+    border: 1px solid #dedede; /* Subtle border */
+}
+
+.order-confirmation__details h2 {
+    color: #04501a; /* Darker blue for better contrast */
+    font-size: 24px; /* Larger font size */
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00b307; /* Blue accent under main title */
+    margin-bottom: 20px;
+}
+
+.order-confirmation__details h4 {
+    color: #04501a; /* Soft black/blue */
+    font-size: 18px; /* Increase font size for subheaders */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+/* styles.css */
+.mat-dialog-container {
+    backdrop-filter: blur(10px);
+    background: white; 
+  }
+  
+.confirmation-list, .confirmation-cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.confirmation-list li, .confirmation-cart-item {
+    padding: 12px 0;
+    border-bottom: 1px dashed #ccc; /* Dashed line for a softer look */
+}
+
+.confirmation-cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.confirmation-cart-item img {
+    width: 80px; /* Slightly smaller images */
+    margin-right: 15px;
+}
+
+.order-total p, .order-total h4 {
+    font-weight: normal; /* Less bold */
+    text-align: right;
+    padding-right: 15px;
+    color: #00b307; /* Teal color for prices */
+}
+
+.order-total h4 {
+    font-size: 20px; /* Larger size for total */
+    margin-top: 10px;
+}
+
+.site-btn {
+    background:#00b307;
+    padding: 10px 25px;
+    border: none;
+    height: 44px;
+    margin-top:10px;
+    width:97%;
+    outline:none;
+    color:#fff;
+    letter-spacing:1px;
+    cursor: pointer;
+}
+
+.site-btn:hover {
+    background-color: #04501a; /* Darker on hover */
+}
+.navigation-bar {
+    margin-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    background-image: url('../../../../assets/image/navback.png');
+    background-size: 1900px 120px; /* Chỉnh kích thước của background */
+    background-repeat: no-repeat;
+    position: relative;
+    height: 120px; /* Đặt chiều cao cố định */
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+    margin-right: 5px;
+  }
+  
+  .nav-link:hover {
+    color: #00B207;
+  }
+  
+  .nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+  }
+  
+  .separator {
+    margin-right: 5px;
+    color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+  }

@@ -1,0 +1,10 @@
+<div class="order-success-container" *ngIf="orderId">
+  <div class="success-checkmark">
+      <img src="assets/image/checkorder.png" alt="Success">
+  </div>
+  <h1>Order Placed Successfully</h1>
+  <h3>Thank you for your order!</h3>
+  <h3 style="color:#00b307">Your order ID is {{ orderId }}.</h3>
+  <h3 *ngIf="orderEmail">Thank you for your purchase. An order confirmation email has been sent to email {{ orderEmail }}.</h3>
+  <button (click)="navigateHome()">Go to Home</button>
+</div>

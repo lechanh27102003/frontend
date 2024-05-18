@@ -1,0 +1,288 @@
+/* Reset styles */
+* {
+
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #FFFFFF;
+    transition: var(--trans-02);
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    display: flex;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main-section {
+    background-color: #FFFFFF;
+    flex-grow: 1;
+    padding: 20px;
+    border-radius: 10px; /* Bo góc */
+    border: 1px solid #E6E6E6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header styles */
+.admin-header {
+    height: 42px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Title styles */
+.title-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.status-filter select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none; /* loại bỏ viền khi được chọn */
+    transition: border-color 0.3s ease-in-out; /* hiệu ứng khi hover */
+}
+
+/* CSS khi hover vào phần chọn lọc */
+.status-filter select:hover {
+    border-color: #888;
+}
+
+/* CSS khi chọn một option */
+.status-filter select:focus {
+    border-color: #00B207;
+}
+
+/* CSS cho option được chọn */
+.status-filter select option[selected] {
+    background-color: #00B207;
+    color: #fff;
+}
+
+.main-section h1 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #333843;
+}
+
+.main-section .nav {
+    font-weight: 500;
+    font-size: 14px;
+    color: #2B572E;
+    gap: 8px;
+    align-items: center;
+}
+
+
+
+
+
+/* Table styles */
+.maintable {
+    border-radius: 8px;
+}
+
+.maintable table {
+    margin-top: 24px;
+    width: 100%;
+    border: 1px solid #E6E6E6;
+    border-collapse: collapse;
+    border-radius: 8px;
+    border: 1px solid #E0E2E7; 
+}
+
+.maintable thead {
+    font-size: 14px;
+    color: #4D4D4D;
+    background-color: #F2F2F2;
+    height: 56px;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.maintable tbody {
+    font-weight: 300;
+    line-height: 1.5;
+    color: #848484;
+    text-align: left;
+    background-color: white;
+}
+
+.maintable tbody tr {
+    border-bottom: 1px solid #E0E2E7; 
+    margin-left: 10%;
+  /* Đường kẻ ngang giữa các hàng */
+}
+
+.maintable tbody td {
+    padding: 12px ; /* Khoảng cách giữa nội dung và mép của ô */
+    font-size: 16px;  /* Kích thước chữ cho nội dung */
+   text-align: center;
+}
+
+.status-filter {
+    display: flex; /* Ensures the select element aligns properly */
+    border-radius: 8px;
+    padding: 6px 12px; /* Adds some padding inside the dropdown */
+}
+.status {
+    border-radius: 42px;
+    padding: 6px 12px;
+}
+.Cancelled {
+    background-color: #FDF1E8;
+    color: #EA4B48;
+}
+.Finished {
+    background-color: #E7F4EE;
+    color: #0D894F;
+}
+
+.Processing {
+    background-color: #f9f1e3;
+    color: #FFA500;
+}
+.Delivering {
+    background-color: #f0eff8;
+    color: #0004ff;
+}
+/* In your order-list.component.css */
+.autocomplete-dropdown {
+    border: 1px solid #ccc;
+    border-top: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    max-height: 200px;
+    overflow-y: hidden;
+  }
+  
+  .autocomplete-dropdown div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .autocomplete-dropdown div:hover {
+    background-color: #f1f1f1;
+  }
+  
+
+
+  .pagination {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #667085;
+    text-align: left;
+    flex: 1; /* Kéo dãn phần tử để đẩy các nút và dấu "..." sang phải */
+}
+
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Đảm bảo các nút và dấu "..." được căn chỉnh về phía cuối bên phải */
+}
+
+.pagination-buttons button,
+.pagination-buttons .dots {
+    width: 32px;
+    height: 32px;
+    background: #B4CCB4;
+    border-radius: 8px;
+    border: 0px;
+    cursor: pointer;
+    margin-left: 2px; /* Đặt khoảng cách giữa các nút và dấu "..." */
+}
+
+.pagination-buttons button:first-child {
+    margin-left: 0; /* Không có khoảng cách bên trái nút đầu tiên */
+}
+
+.pagination-buttons button:active,
+.pagination-buttons button:visited,
+.pagination-buttons button:focus {
+    outline: none;
+    color: #ffffff;
+    background: #2C742F;
+    transform: translateY(1px);
+}
+.pagination-buttons button.active {
+    background: #2C742F;
+    color: #FFFFFF;
+    border: 1px solid #2C742F; /* Hoặc một định nghĩa style nào đó bạn muốn dùng để nổi bật nút đang active */
+}
+
+.pagination-buttons .dots {
+    /* Style cho dấu "..." nếu bạn muốn nó khác biệt so với nút */
+    font-size: 14px; /* Đặt font size cho dấu "..." nếu cần */
+    color: #667085; /* Đặt màu cho dấu "..." nếu cần */
+    background: transparent; /* Dấu "..." không có nền */
+    width: auto; /* Để dấu "..." không bị giới hạn bởi kích thước cố định */
+    height: auto; /* Để dấu "..." không bị giới hạn bởi kích thước cố định */
+    cursor: default; /* Dấu "..." không có hành vi như một nút */
+}
+
+/* Nếu không muốn dấu "..." có margin bên trái, bạn có thể loại bỏ margin-left từ style .dots */
+.navigation-bar {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    background-image: url('../../../../assets/image/navback.png');
+    background-size: 1900px 120px; /* Chỉnh kích thước của background */
+    background-repeat: no-repeat;
+    position: relative;
+    height: 120px; /* Đặt chiều cao cố định */
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+    margin-right: 5px;
+  }
+  
+  .nav-link:hover {
+    color: #00B207;
+  }
+  
+  .nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+  }
+  
+  .separator {
+    margin-right: 5px;
+    color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+  }

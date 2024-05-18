@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: white;
+}
+footer{
+    background: #343434;
+    padding-top: 50px;
+}
+.container{
+    width: 100%; /* Thay đổi từ 1140px thành 100% */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Cho phép các phần wrap xuống dòng khi không đủ không gian */
+}
+.footer-content{
+    width: 20%; /* Thay đổi từ 33.3% thành 20% */
+    padding: 0 10px;
+    box-sizing: border-box; /* Bao gồm padding vào chiều rộng và chiều cao */
+    text-align: center; /* Căn giữa nội dung */
+}
+h3{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.footer-content p{
+    width:190px;
+    margin: auto;
+    padding: 7px;
+}
+.footer-content ul{
+    text-align: center;
+    padding: 0;
+    list-style: none; /* Loại bỏ bullets cho danh sách */
+}
+.list li{
+    width: auto;
+    text-align: center;
+    padding: 7px;
+    position: relative;
+}
+.list li::before{
+    content: '';
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #00B207;
+    transition-duration: .5s;
+}
+.list li:hover::before{
+    width: 70px;
+}
+.social-icons{
+    text-align: center;
+    padding: 0;
+}
+.social-icons li{
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+.social-icons i{
+    color: white;
+    font-size: 25px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #f18930;
+}
+.social-icons i:hover{
+    color: #f18930;
+}
+.bottom-bar{
+    background: #00B207;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+.bottom-bar p{
+    color: #343434;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+}
+@media only screen and (max-width: 768px) {
+    .footer-content {
+        width: 100%;
+    }
+}

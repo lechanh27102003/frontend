@@ -1,0 +1,120 @@
+<div class="container">
+
+    <!-- Main content -->
+    <app-slide-show></app-slide-show>
+   <!-- Category section -->
+<div class="category-section">
+    <h4 class="text-center">Our Category</h4>
+    <div class="category-items">
+        <div class="card-container" >
+            <div class="card" *ngFor="let category of categories.slice(0, 4)" [routerLink]="['/product-client/', category.categoryId]">
+                <img [src]="category.categoryImage" alt="" class="card-image">
+                <ng-container >
+                    <div class="card-body">
+                        <h5 class="card-title">{{ category.categoryName }}</h5>
+                    </div>                    
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- About section -->
+
+    
+    
+
+    
+    <!-- Testimonial section -->
+    <div class="parallax" >
+
+        <!-- Popular products -->
+        <p class="text-center" style="font-weight: bold;">Highlighted Products</p>
+        <div class="product-wrapper">
+        <div class="product-card">
+            <div class="circle" style="--clr:#00B207">
+            <img src="../../../../assets/image/michuthumb.png" class="logo">
+            </div>
+            <div class="contact">
+                <h2>Brown Rice Noodles</h2>
+                <p>Best seller of May</p>
+                <a href="product-detail/663cf16646d782c9adf75162">Explore</a>
+            </div>
+            <img src="../../../../assets/image/michuu.png" class="product-img">
+        </div>
+        <div class="product-card">
+            <div class="circle" style="--clr:#FF8300">
+            <img src="../../../../assets/image/miraucuthumb.png" class="logo">
+            </div>
+            <div class="contact">
+                <h2>Five-color Noodles</h2>
+                <p>Best seller of May</p>
+                <a href="product-detail/663cf16646d782c9adf75160">Explore</a>
+            </div>
+            <img src="../../../../assets/image/miraucu.png" class="product-img">
+        </div>
+    </div>
+
+    <div class="popular-products">
+        <h2 class="text-center">And Things You May Like</h2>
+        <div class="product-grid">
+            <div class="card" *ngFor="let product of products">
+                <img [src]="product.image" alt="" class="card-image">
+                <div class="card-body">
+                    <p class="card-title">{{ product.productName }}</p>
+                    <div *ngIf="product.discount > 0"><b class="price">{{ product.price | currency:'VND' }}</b></div>
+                    <div><b class="discount-price">{{ discountPrice | currency:'VND' }}</b></div>
+				<div class="star-rating">
+					<span class="star" *ngFor="let star of [1, 2, 3, 4, 5]">
+						<i class="fa fa-star" [ngClass]="{'filled':star <= product.rating}"></i>
+					</span>
+				</div>
+                <div>
+                    <i class="cart fa-solid fa-bag-shopping" (click)="addToCart($event, product)"></i>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="coupons">
+        <h2 class="text-center">Small Gifts For Your Visit</h2>
+        <app-coupon-card></app-coupon-card>
+    </div>
+        
+        <!-- About section -->
+
+        <div class="about-section">
+            <h2 class="text-center">Here Are Some Ideas Of Us</h2>
+                <div class="about-content" >
+                    <img src="../../../../assets/image/about us.png">
+                    <button (click)="navigateToProduct() ">Buy Now</button>
+                </div>
+    
+        </div>
+            <div class="feedback">
+                <div class="testimonial">
+                    <img class="line" src="../../../../assets/image/imageline2.png">
+                    <h2 class="text-center">What Our Customers Say</h2>
+                        <div class="testimonial-img">
+                            <img class="fb-card" src="../../../../assets/image/Group 1.svg">
+                            <img  class="fb-card" src="../../../../assets/image/Group 2.svg">
+                            <img  class="fb-card" src="../../../../assets/image/Group 3.svg">
+                        </div>
+                    
+                </div>
+        </div>
+        <div >
+    <img class="imgpara"  src="../../../../assets/image/veggie_left.png" id="veggie_left"  width="60%" >
+        <img  class="imgpara" src="../../../../assets/image/veggie_right.png" id="veggie_right" width="60%">
+        </div>
+    </div>
+    
+    <div class="foot">
+        <img src="../../../../assets/image/line.png">
+    </div>
+
+            
+    
+</div>
+

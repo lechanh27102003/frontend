@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+.text {
+    color: #808080;
+    font-size: 18px;
+}
+
+.highlight {
+    text-align: justify;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+body {
+    background-color: white;
+}
+
+td.width-adjust {
+    font-size: 16px;
+    width: 424px;
+    position: relative;
+}
+/* Điều chỉnh hiển thị của thẻ h2 */
+h2 {
+    text-align: center; /* Canh giữa văn bản */
+    font-weight: bold; /* Chữ đậm */
+    margin: 20px 0; /* Khoảng cách top và bottom là 20px, left và right tự động */
+    position: relative; /* Tạo vị trí tương đối để có thể sử dụng sau này */
+    font-size: 30px;
+  }
+
+.width-adjust input[type="search"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.blog {
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 var(--padding-9xs);
+}
+
+.image-icon {
+    margin-top: 120px;
+    margin-left: 150px;
+    width: 1250px;
+    height: 800px;
+}
+
+.nhng-loi-tri {
+    width: 312px;
+    position: relative;
+    line-height: 150%;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.calendar {
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    color: #666666;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.navigation-bar {
+    margin-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    background-image: url('../../../../assets/image/navback.png');
+    background-size: 1900px 120px; /* Chỉnh kích thước của background */
+    background-repeat: no-repeat;
+    position: relative;
+    height: 120px; /* Đặt chiều cao cố định */
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+    margin-right: 5px;
+  }
+  
+  .nav-link:hover {
+    color: #00B207;
+  }
+  
+  .nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+  }
+  
+  .separator {
+    margin-right: 5px;
+    color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+  }
+
+/* Chỉnh sửa cho phần content */
+.blog-content {
+    padding: 0 120px; /* Điều chỉnh padding cho căn lề 2 bên */
+    padding-left: 150px; /* Padding bên trái */
+    padding-bottom: 100px;
+}
+
+
+.blog-content p {
+    color: black; /* Đảm bảo màu chữ là màu đen */
+    text-align: justify; /* Căn đều văn bản */
+}
+
+
+.line {
+    border: none; /* Loại bỏ đường line mặc định */
+    background-color: #00B207; /* Màu xám nhạt */
+    height: 1.5px; /* Chiều cao của đường line */
+    margin: 20px 0; /* Khoảng cách từ phía trên và dưới */
+    margin-left: 150px;
+    width: 1250px;; /* Điều chỉnh chiều rộng của đường line */
+}
+

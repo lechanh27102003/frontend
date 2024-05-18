@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="form-container sign-in">
+      <form [formGroup]="resetForm">
+        <h1 style="color:#00B207">Reset Password</h1>
+        <p class="instruction">Please use a strong password.</p>
+        <div class="instruction"></div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <br>
+          <input type="password" id="password" formControlName="password" placeholder="Enter your new password">
+          <br>
+          <span *ngIf = "resetForm.hasError('required','password') && resetForm.controls['password'].dirty" 
+          class="text-red-500 mt-1 text-sm">*Password is required</span>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <br>
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm your new password">
+          <br>
+          <span *ngIf = "resetForm.hasError('required','confirmPassword') && resetForm.controls['confirmPassword'].dirty" class="text-red-500 mt-1 text-sm">*Confirm Password is required</span>
+          <span *ngIf = "resetForm.hasError('confirmPasswordValidator','confirmPassword')" class="text-red-500">*Password didn't match</span>
+        </div>
+        <button type="button" (click)="reset()" [disabled]="resetForm.invalid" [class.disabled]="resetForm.invalid"  class="bg-indigo-500 w-1/4 mr-3 p-2 rounded-md text-gray-50">Reset</button>
+      </form>
+    </div>
+  </div>
+  

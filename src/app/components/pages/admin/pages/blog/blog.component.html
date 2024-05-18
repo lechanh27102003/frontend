@@ -1,0 +1,93 @@
+
+<div class="container">
+    <div class="content">
+        <div id="main-section" class="main-section">
+            <div name="title" class="title-content">
+                <div class="title-container">
+                    <h1>Blog</h1>
+                </div>
+                <div class="deleteadd">
+                  
+                    <button class="delete" id="delete" (click)="deleteSelectedBlogs()">Delete Blog</button>
+                    <button class="add" (click)="showCreateBlogForm()">Add Blog</button>
+                </div>
+                <div class="maintable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" (change)="selectAll($event)"></th>
+                                <th> Blog ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Create Date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let blog of blogs">
+                                <td><input type="checkbox" [(ngModel)]="blog.selected"></td>
+                                <td>{{ blog._id }}</td>
+                                <td>{{ blog.title }}</td>
+                                <td>{{ blog.author }}</td>
+                                <td>{{ blog.createDate }}</td>
+                                <td>
+                                    <button class="btn btn-primary" (click)="startEditing(blog)">Edit</button>
+                                   
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>            
+            <div class="navigation">
+                <span>Showing 1-2 from 4</span>
+                <div>
+                    <input type="button" value="<">
+                    <input type="button" value="1">
+                    <input type="button" value="2">
+                    <input type="button" value=">">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- Form tạo blog -->
+<div class="create-blog-form" *ngIf="showCreateForm">
+    <h2>Create New Blog</h2>
+    <form (ngSubmit)="addBlog()">
+        <label>Author:</label>
+        <input type="text" [(ngModel)]="newBlog.author" name="author" required>        
+        <label>Title:</label>
+        <input type="text" [(ngModel)]="newBlog.title" name="title" required>
+        <label>Create Date:</label>
+        <input type="date" [(ngModel)]="newBlog.createDate" name="createDate" required>
+        <label>Content:</label>
+        <textarea [(ngModel)]="newBlog.content" name="content" required></textarea>
+        <label>Image:</label>
+        <input type="file" (change)="onFileSelected($event)" name="image">
+        <div class="form-buttons">
+            <button type="button" (click)="hideCreateBlogForm()">Cancel</button>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</div>
+<!-- Blog editing form -->
+<div class="create-blog-form" *ngIf="editingBlog">
+    <h2>Edit Blog</h2>
+    <form (ngSubmit)="updateBlog()">
+    <label>Author:</label>
+      <input type="text" [(ngModel)]="editingBlog.author" name="author" required>
+      <label>Title:</label>
+      <input type="text" [(ngModel)]="editingBlog.title" name="title" required>
+      <label>Content:</label>
+      <textarea [(ngModel)]="editingBlog.content" name="content" required></textarea>
+      <label>Image:</label>
+      <input type="file" (change)="onFileSelected($event)" name="image">
+      <img *ngIf="editingBlog.image" [src]="editingBlog.image" height="100">
+      <div class="form-buttons">
+        <button type="button" (click)="cancelEditing()">Cancel</button>
+        <button type="submit">Update</button>
+      </div>
+    </form>
+  </div>

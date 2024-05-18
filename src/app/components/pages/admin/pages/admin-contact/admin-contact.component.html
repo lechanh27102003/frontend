@@ -1,0 +1,47 @@
+<div class="navigation-bar">
+    <a routerLink="/homepage">
+        <img src="../../../../assets/image/homepage.jpg" alt="Homepage" class="nav-image">
+    </a>
+    <span class="separator">&gt;</span>
+    <a routerLink="/admin-contact" class="nav-link">Contact</a>
+  </div>
+<div class="container">
+    <div class="content">
+        <div class="main-section">
+            <div class="title-content">
+                <div class="title-container">
+                    <h1>Customer Messages</h1>
+                    <p class="nav">Messages</p>
+                </div>
+            </div>
+
+            <div class="message-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Message ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Date Sent</th>
+                            <th>Date Responsed</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let contact of contacts">
+                            <td><a [routerLink]="['/admin-contact-details', contact._id]">{{ contact._id }}</a></td>
+                            <td>{{ contact.name }}</td>
+                            <td>{{ contact.email }}</td>
+                            <td>{{ contact.phone }}</td>
+                            <td>{{ formatDateString(contact.sentDate) }}</td>
+                            <td>{{ formatDateString(contact.responseDate) }}</td>
+
+                            <td><span [class.status]="true" [class.Waiting]="contact.status === 'Waiting'" [class.Responsed]="contact.status === 'Responsed'">{{ contact.status }}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> 

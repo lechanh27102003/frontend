@@ -1,0 +1,352 @@
+:root {
+    --body-small-body-small-400: Inter;
+    --font-inter: Inter;
+    --color-primary: #00b307;
+    --color-white: #666;
+    --color-menubar: #fff;
+    --color-black-1: #212b38;
+    --gray-scale-gray-100: #e6e6e6;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+
+.account-info, .auth-links {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    
+}
+.signin-container a.signin-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #666; /* Initial color set to grey */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signin-container a.signin-link:hover {
+  color:#00b307; /* Color changes to primary green on hover */
+}
+.dropdown-account {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    display: none;
+}
+
+.account-info:hover .dropdown-account {
+    display: block;
+}
+
+  
+  body {
+    font-family: var(--font-inter);
+
+   
+  }
+  /*LOGO*/
+  .logo2 {
+    position: absolute;
+    left: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 8px;
+  }
+  .plant-1-icon2 {
+    width: 32px;
+    position: relative;
+    height: 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  /*Search bar*/
+  
+  .header {
+    background-color: #00b307; 
+    color: white; 
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 12px;
+
+  
+  }
+  .container{
+    width: 100%;
+    height: 50px;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gray-scale-gray-100);
+    
+    
+  }
+  form{
+    background:#fff;
+    width: 400px;
+    height: 45px;
+    display: flex;
+    
+  }
+  form input{
+      flex:1;
+      border: none;
+      outline:none;
+      height: 40px;
+      border: 1px solid #E6E6E6;
+  }
+  form button{
+    background:#00b307;
+    padding: 10px 25px;
+    border: none;
+    height: 40px;
+    outline:none;
+    color:#fff;
+    letter-spacing:1px;
+    cursor: pointer;
+    border-radius: 0 6px 6px 0;
+  }
+  form .fa-search{
+    align-self: center;
+    padding: 10px 20px;
+    color:#666;
+    height: 40px;
+    border-radius:  6px 0 0 6px ;
+    background-color: #eceaea;
+    margin-bottom: 6px;
+  
+  }
+  /*Cart*/
+  .cart-wrapper {
+    position: relative;
+    margin-right: 10px;
+    margin-left: 40px;
+  }
+  
+  .cart-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #666;
+    background-color: #fff;
+    text-decoration: none;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ed0e0e;
+    color: #fffdfd;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+    z-index: 1;
+  }
+.fa-shopping-cart{
+  background-color: #fff;
+  margin-left:100px;
+  font-size:20px;
+  color:#a09d9d;
+}
+  
+
+  
+  
+  .right-section {
+    width:auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 50px; /* Giảm khoảng cách giữa các phần tử */
+  }
+  
+  
+  
+  
+  /*Sign in/up*/
+  /* Style cho phần Signin */
+  .Signin {
+    position: relative;
+    left: 85%;
+    width: auto;
+    height: 39px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 4px;
+    font-size: 14px;
+  }
+  
+  /* Thêm hover cho liên kết đăng nhập và đăng kí */
+  .Signin a {
+    color: #666; /* Màu sắc ban đầu của liên kết */
+    text-decoration: none; /* Loại bỏ gạch chân */
+    transition: color 0.3s ease; /* Hiệu ứng mượt mà khi thay đổi màu sắc */
+  }
+  
+  .Signin a:hover {
+    color: #00b307; /* Màu sắc khi hover */
+  }
+  
+  .fa-user {
+    font-size: 20px;
+    color:#a09d9d;
+    margin-left: 50px;
+    margin-right: 10px;
+  }
+  
+  /*Menu bar*/
+  .menu-bar {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: #eceaea;
+
+    position: relative;
+  }
+  
+  .menu-bar ul {
+    list-style: none;
+    display: flex;
+    margin-left: 52px;
+    
+  }
+  
+  .menu-bar ul li {
+    /* width: 120px; */
+    padding: 10px 30px;
+    /* text-align: center; */
+    background-color: #eceaea;
+    position: relative;
+  }
+  
+  .menu-bar ul li a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #dfdede;
+    text-decoration: none;
+    background-color: #eceaea;
+    transition: all 0.3s;
+  }
+  
+  .menu-bar ul li a:hover {
+    color: var(--color-primary);
+  }
+  
+  .fa-caret-down {
+    float: right;
+    margin-left: 10px;
+    padding-top: 3px;
+    background-color: #eceaea;
+  }
+  .search {
+    padding-left: 10px;
+  }
+  
+  
+  /* dropdown menu style */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff;
+   
+    z-index: 1000; /* Đảm bảo dropdown menu nằm trên các phần tử khác */
+  }
+  .menu-bar ul li a {
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    color: #000; /* Default text color */
+}
+
+.menu-bar ul li a:hover {
+    color: #00b307; /* Change color on hover */
+}
+
+  
+  .menu-bar ul li:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--color-black);
+  }
+  
+  .menu-bar ul li:hover .dropdown-menu ul {
+    display: block;
+    margin: 10px;
+  }
+  
+  .menu-bar ul li:hover .dropdown-menu ul li {
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px solid var(--gray-scale-gray-100); 
+  }
+  
+  .dropdown-menu-1 {
+    display: none;
+  }
+  .menu-bar ul li a.active {
+    color: #00b307; 
+    /* Màu xanh cho mục đang hoạt động */
+}
+
+  
+  .dropdown-menu ul li:hover .dropdown-menu-1 {
+    display: block;
+    position: absolute;
+    left: 150px;
+    top: 0;
+    background-color: var(--color-black);
+  }
+
+  
+ 
+  @media only screen and (max-width: 768px) {
+    .logo2 {
+      left: 50px;
+    }
+    .right-section {
+      gap: 20px;
+    }
+    .Signin {
+      left: 20px;
+    }
+  }

@@ -1,0 +1,116 @@
+<div class="navigation-bar">
+    <a routerLink="/homepage">
+        <img src="../../../../assets/image/homepage.jpg" alt="Homepage" class="nav-image">
+    </a>
+    <span class="separator">&gt;</span>
+    <a routerLink="/order" class="nav-link">Order</a>
+    <span class="separator">&gt;</span>
+    <a routerLink="/order-details" class="nav-link">Order Details</a>
+  </div>
+<div class="container">
+    <h2>Order Details</h2>
+    <div *ngIf="order" class="order-details columns">
+        <div class="left-column">
+            <fieldset>
+                <legend>Basic Information</legend>
+                <div>
+                    <label>Order ID:</label>
+                    <span>{{ order._id }}</span>
+                </div>
+                <div>
+                    <label>Order Date:</label>
+                    <span>{{formatDateString (order.orderDate) }}</span>
+                </div>
+                <div>
+                    <label>Username:</label>
+                    <span>{{ order.userName }}</span>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Products</legend>
+                <ul>
+                    <li *ngFor="let product of order.products">
+                        <img [src]="product.productImage" alt="Product Image" style="width: 50px; height: auto;">
+                        <span>{{ product.productName }} (Quantity: {{ product.quantity }}, Price: {{ product.price | currency:'VND' }})</span>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Costs</legend>
+                <div>
+                    <label>Subtotal:</label>
+                    <span>{{ order.subTotal| currency:'VND'}}</span>
+                </div>
+                <div>
+                    <label>Shipping Fee:</label>
+                    <span>{{ order.shippingFee | currency:'VND'}}</span>
+                </div>
+                <div>
+                    <label>Discount</label>
+                    <span>{{ order.discountPrice | currency:'VND'}}</span>
+                </div>
+
+                <div>
+                    <label>Total:</label>
+                    <span>{{ order.totalPrice | currency:'VND'}}</span>
+                </div>
+            </fieldset>
+        </div>
+        <div class="right-column">
+            <fieldset>
+                <legend>Shipping Information</legend>
+                <div>
+                    <label>Full Name:</label>
+                    <input type="text" [(ngModel)]="order.shipTo.fullName">
+                </div>
+                <div>
+                    <label>Phone:</label>
+                    <input type="text" [(ngModel)]="order.shipTo.phone">
+                </div>
+                <div>
+                    <label>Email:</label>
+                    <input type="text" [(ngModel)]="order.shipTo.email">
+                </div>
+                <div>
+                    <label>Address:</label>
+                    <input type="text" [(ngModel)]="order.shipTo.address">
+                </div>
+                <div>
+                    <label>Note:</label>
+                    <input type="text" [(ngModel)]="order.shipTo.note">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>City:</label>
+                        <input type="text" [(ngModel)]="order.shipTo.city">
+                    </div>
+                    <div class="col">
+                        <label>District:</label>
+                        <input type="text" [(ngModel)]="order.shipTo.district">
+                    </div>
+                    <div class="col">
+                        <label>Ward:</label>
+                        <input type="text" [(ngModel)]="order.shipTo.ward">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Order Management</legend>
+                <div>
+                    <label>Status:</label>
+                    <select [(ngModel)]="order.status">
+                        <option value="Cancelled">Cancelled</option>
+                        <option value="Delivering">Delivering</option>
+                        <option value="Processing">Processing</option>
+                        <option value="Finished">Finished</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Staff Note:</label>
+                    <textarea [(ngModel)]="order.staffNote" rows="3"></textarea>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <button (click)="updateOrder()">Save Changes</button>
+</div>

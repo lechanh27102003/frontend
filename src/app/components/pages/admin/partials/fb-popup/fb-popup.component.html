@@ -1,0 +1,7 @@
+<h1>Reply Feedback</h1>
+<p>Please provide your reply here:</p>
+<textarea [(ngModel)]="replyContent" rows="5" cols="50"></textarea>
+<div>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-button color="primary" (click)="onReplyClick()">Reply</button>
+</div>

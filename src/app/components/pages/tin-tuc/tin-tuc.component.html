@@ -1,0 +1,23 @@
+<div class="width-adjust">
+    <div class="navigation-bar">
+        <a routerLink="/">
+            <img src="../../../../assets/image/homepage.png" alt="Homepage" class="nav-image">
+        </a>
+        <span class="separator">&gt;</span>
+        <a routerLink="/tin-tuc" class="nav-link">Blog</a>
+    </div>    
+<!-- In your blog listing component -->
+<h4 class ="title">BLOG</h4>
+<div class="card-container">
+   
+<hr style="margin-top: 20px; border: none; border-top: 1px solid #ccc; width: 100%;"> 
+    <div *ngFor="let blog of blogs" class="card">
+        <img [src]="blog.image" alt="Blog Image">
+        <div class="card-content">
+            <h4>{{ blog.title }}</h4>
+            <p>{{ blog.content?.slice(0, 50) + '...' }}</p><!-- Thêm dòng này -->
+            <button [routerLink]="['/single-blog', blog._id]" class="btn">Read more</button>
+        </div>
+    </div>
+</div>
+

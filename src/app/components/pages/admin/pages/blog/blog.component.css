@@ -1,0 +1,209 @@
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    display: flex;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+}
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section h1 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #333843;
+}
+
+.deleteadd {
+    align-self: flex-end; /* Đặt phần tử vào phía bên phải */
+    margin-top: -10px;
+    margin-right: 12px; /* Đẩy phần tử ra khỏi bên phải một khoảng cách */
+}
+
+.delete,
+.add {
+    width: 140px;
+    height: 40px;
+    background: #F0F1F3;
+    display: inline-block;
+    margin-left: auto; /* Đặt margin-left thành auto để đẩy nút sang bên phải */
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.005em;
+    color: #1A1A1A;
+    border: 0px;
+    cursor: pointer;
+}
+
+.add {
+    background: #2C742F;
+    color: #FFFFFF;
+}
+
+.delete:active,
+.add:active {
+    transform: translateY(2px);
+}
+
+.maintable {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.maintable table {
+    margin-top: 24px;
+    width: 100%;
+    border: 1px solid #F0F1F3;
+    border-collapse: collapse;
+}
+
+.maintable thead {
+    font-size: 14px;
+    color: #333843;
+    background-color: #eff1f5;
+    height: 56px;
+    text-align: left;
+}
+
+.maintable tbody {
+    font-weight: 300;
+    line-height: 10px;
+    color: #667085;
+    text-align: left;
+    background-color: white;
+}
+
+.maintable th input[type=checkbox],
+.maintable td input[type=checkbox] {
+    margin-left: 8px;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+.maintable tbody tr {
+    border-bottom: 1px solid #E0E2E7;
+}
+
+.maintable tbody td {
+    padding: 12px 0;
+    font-size: 14px;
+}
+
+.navigation {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation span {
+    font-size: 14px;
+    color: #667085;
+}
+
+.navigation input[type="button"] {
+    width: 32px;
+    height: 32px;
+    background: #B4CCB4;
+    border-radius: 8px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.navigation input[type="button"]:active {
+    color: #ffffff;
+    background: #2C742F;
+    transform: translateY(1px);
+}
+
+.navigation input[type="button"]:visited {
+    color: #ffffff;
+    background: #2C742F;
+}
+
+.navigation input[type="button"]:focus {
+    outline: none;
+    color: #ffffff;
+    background: #2C742F;
+}
+.create-blog-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-blog-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .create-blog-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .create-blog-form input[type="text"],
+  .create-blog-form input[type="date"],
+  .create-blog-form textarea,
+  .create-blog-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .create-blog-form textarea {
+    height: 150px;
+  }
+  
+  .create-blog-form .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .create-blog-form .form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .create-blog-form .form-buttons button[type="submit"] {
+    background-color: #2C742F;
+    color: white;
+  }
+  
+  .create-blog-form .form-buttons button[type="submit"]:hover {
+    background-color: #2C742F;
+  }
+  
+
+  .btn-primary {
+    /* Đảm bảo nút chiếm đầy đủ chiều rộng của phần tử cha */
+    width: fit-content; /* Chiều rộng của nút sẽ phụ thuộc vào nội dung */
+    background-color: orange !important; /* Màu nền */ /* Màu chữ */
+    border: none; /* Xóa đường viền */
+    border-radius: 5px; /* Bo góc */
+    padding: 10px 20px; /* Độ lớn của padding */
+    cursor: pointer; /* Hiển thị icon con trỏ khi di chuột qua */
+    font-size: 14px; /* Kích thước chữ */ /* Độ đậm của chữ */
+}

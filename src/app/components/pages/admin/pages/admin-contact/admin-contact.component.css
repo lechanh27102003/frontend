@@ -1,0 +1,81 @@
+/* Tiếp tục sử dụng các style đã định nghĩa trước đó */
+.message-table table {
+    margin-top: 24px;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #F0F1F3;
+}
+
+.message-table thead {
+    font-size: 14px;
+    color: #333843;
+    background-color: #eff1f5;
+    height: 56px;
+}
+
+.message-table tbody {
+    font-weight: 300;
+    line-height: 10px;
+    color: #667085;
+    text-align: left;
+    background-color: white;
+}
+
+.message-table tbody tr {
+    border-bottom: 1px solid #E0E2E7; 
+    margin-left: 10%;
+}
+
+.message-table tbody td {
+    padding: 12px 0;
+    font-size: 14px;
+    text-align: center;
+}
+.status-filter {
+    display: flex; /* Ensures the select element aligns properly */
+   
+    border-radius: 8px;
+    padding: 2px 12px; /* Adds some padding inside the dropdown */
+}
+
+.Waiting {
+    background-color: #FDF1E8;
+    color: #f3b409;
+}
+.Responsed {
+    background-color: #E7F4EE;
+    color: #0D894F;
+}
+/* Thêm style cho các trạng thái của tin nhắn */
+.new-message {
+    color: #FFA500; /* Màu cho tin nhắn mới */
+}
+
+.viewed {
+    color: #0D894F; /* Màu cho tin nhắn đã xem */
+}
+.navigation-bar {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    margin-right: 5px;
+}
+
+.nav-link:hover {
+    color: #00B207;
+}
+
+.nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.separator {
+    margin-right: 5px;
+}

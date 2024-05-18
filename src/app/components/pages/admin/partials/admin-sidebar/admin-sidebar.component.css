@@ -1,0 +1,75 @@
+/* Sidebar */
+.sidebar {
+  width: 180px;
+  background-color: #042e04;
+  color: #fff;
+  z-index: 99;
+  transition: width 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+  align-items: center; /* Căn giữa các phần tử */
+}
+
+.sidebar.close {
+  width: 80px;
+}
+
+/* Logo */
+.logo {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/* Navigation list */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+  
+}
+
+.nav-list li {
+  margin-bottom: 10px;
+}
+
+/* Icon-only link style */
+.nav-list .icon-link {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Đưa text về bên trái */
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  height: 40px; /* Độ cao của mỗi item */
+}
+
+.nav-list .icon-link:hover {
+  background-color: #555;
+}
+
+.active {
+  background-color: #555;
+}
+
+/* Icon styles */
+.nav-list .icon-link i {
+  font-size: 20px;
+  margin-right: 10px; /* Khoảng cách giữa icon và text */
+}
+
+/* Text styles */
+.nav-list .text {
+  transition: opacity 0.3s ease;
+}
+
+.hide-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}

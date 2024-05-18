@@ -1,0 +1,15 @@
+<div class="container">
+    <ng-container *ngFor="let code of codes.slice(0, 3)">
+      <div class="coupon-card">
+        <h3>{{ code.description }}</h3>
+        <div class="coupon-row">
+          <span id="cpnCode">{{ code.name }}</span>
+          <span id="cpnBtn" (click)="copyCode(code.name)">COPY CODE</span>
+        </div>
+        <p>Valid Till: {{ code.endDate | date:'yyyy-MM-dd'}}</p>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+      </div>
+    </ng-container>
+  </div>
+  

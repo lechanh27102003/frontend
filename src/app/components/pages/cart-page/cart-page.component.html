@@ -1,0 +1,72 @@
+<div class="navigation-bar">
+  <a routerLink="/">
+    <img src="../../../../assets/image/homepage.png" alt="Homepage" class="nav-image">
+</a>
+<span class="separator">&gt;</span>
+  <a routerLink="/cart" class="nav-link">Cart</a>
+</div>
+
+<div class="cart-title"><h1>My Shopping Cart</h1></div>
+
+<!-- Hiển thị thông tin sản phẩm và giỏ hàng -->
+<div *ngIf="cart && cart.items.length" class="container">
+    <ul>
+      <!-- Tiêu đề các cột -->
+      <li class="cart-header">
+        <div class="header-item">PRODUCT</div>
+        <div class="header-item"></div>
+        <div class="header-item" style="margin-left: 30px">QUANTITY</div>
+        <div class="header-item">SUBTOTAL</div>
+        <div class="header-item"><button class="clear-cart" (click)="clearCart()">CLEAR ALL</button></div>
+      </li>
+      <li *ngFor="let cartItem of cart.items">
+        <div class="product-image">
+          <img [src]="cartItem.product.image" [alt]="cartItem.product.productName"> 
+        </div>
+        <div class="product-name">
+          <a [routerLink]="['/product-detail', cartItem.product._id]">
+            {{ cartItem.product.productName  }} 
+          </a>
+        </div>
+        <!-- Hiển thị số lượng và giá -->
+          <div class="quantity">
+              <span (click)="subtractQuantity(cartItem)"><i class = "fas fa-minus-circle"></i></span>
+              <input class="product-quantity" type="number" [(ngModel)]="cartItem.quantity" (change)="onChangeQuantity($event, cartItem)"  min="1">
+              <span (click)="plusQuantity(cartItem)"><i class = "fas fa-plus-circle"></i></span>
+          </div>
+         <!-- Hiển thị giá và tính toán giá sau khi tính giảm giá -->
+        <div>
+        <span>{{ cartItem.price | currency: 'VND' }}</span>
+        <br>
+        <span *ngIf="cartItem.product.discount != null && cartItem.product.discount != 0" class="original-price">
+          {{ cartItem.product.price * cartItem.quantity | currency: 'VND' }}
+          (-{{ cartItem.product.discount }}%)
+        </span>
+      </div>
+        
+  
+        <div>
+            <i class="fas fa-trash" (click)="removeFromCart(cartItem)">
+            </i>
+        </div>
+      </li>
+    </ul>
+    <!-- Hiển thị tổng số lượng và tổng giá -->
+    <div class="checkout">
+      <span class = "checkout-title">Cart Total</span>
+      <span class="horizontal"></span>
+      <div class="products-count">
+        <span>Item Quantity:</span>
+        <span style ="color:#000000; font-weight: 600;" >{{ cart.totalCount }}</span>
+    </div>
+    <span class="horizontal"></span>
+    <div class="products-total">
+        <span>Total:</span>
+        <span  class="original-price" *ngIf="totalOriginalPrice !== totalPrice">{{ totalOriginalPrice | currency: 'VND' }}</span>
+        <span style ="color:#000000; font-weight: 600;">{{ totalPrice | currency: 'VND' }}</span>
+    </div>
+    <span class="horizontal"></span>
+      <button class="checkout-button" (click)="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+  

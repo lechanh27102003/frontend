@@ -1,0 +1,28 @@
+<div class="navigation-bar">
+  <a routerLink="/homepage">
+    <img src="../../../../assets/image/homepage.jpg" alt="Homepage" class="nav-image">
+</a>
+<span class="separator">&gt;</span>
+    <a routerLink="/dashboard" class="nav-link">Dashboard</a>
+  </div>
+<div class="container">
+  <div class="box">
+      <h2>Total Revenue</h2>
+      <p class="data">{{ totalRevenue | currency:'VND':'symbol':'1.2-2' }}</p>
+  </div>
+  <div class="box">
+      <h2>Total Orders</h2>
+      <p class="data">{{ totalOrders }}</p>
+  </div>
+</div>
+<div class="parent-container">
+<iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" 
+width="1500" height="780" src="https://charts.mongodb.com/charts-project-plantique-jdrjn/embed/charts?id=66377720-acb5-4e4b-8a54-b99367cd251b&maxDataAge=3600&theme=light&autoRefresh=true"></iframe>
+</div>
+<div class="parent-container-2">
+<iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" 
+width="650" height="480" src="https://charts.mongodb.com/charts-project-plantique-jdrjn/embed/charts?id=66377b7a-4ae0-49b1-88ac-350effbcf3fb&maxDataAge=3600&theme=light&autoRefresh=true"></iframe>
+<iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" 
+width="650" height="480" src="https://charts.mongodb.com/charts-project-plantique-jdrjn/embed/charts?id=66378af5-1e6e-4c12-879d-7066d9517507&maxDataAge=3600&theme=light&autoRefresh=true"></iframe>
+</div>
+

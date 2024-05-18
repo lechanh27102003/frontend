@@ -1,0 +1,140 @@
+	.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0px 40px;
+}
+
+.title {
+    margin-top: 15px;
+    display: flex;
+    font-size: 30px;
+    color:#00B207;
+    justify-content: center;
+}
+
+.navigation-bar {
+    margin-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    background-image: url('../../../../assets/image/navback.png');
+    background-size: 1900px 120px; /* Chỉnh kích thước của background */
+    background-repeat: no-repeat;
+    position: relative;
+    height: 120px; /* Đặt chiều cao cố định */
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+    margin-right: 5px;
+  }
+  
+  .nav-link:hover {
+    color: #00B207;
+  }
+  
+  .nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+  }
+  
+  .separator {
+    margin-right: 5px;
+    color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+  }
+
+
+
+.outline {
+    display: flex;
+}
+
+.filter {
+    margin-left: 60px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Thêm định dạng cho tiêu đề */
+.filter > span {
+    display: block;
+    font-weight: bold; /* In đậm */
+    text-align: center; /* Căn giữa */
+    margin-bottom: 20px; /* Margin bottom */
+}
+
+.star-filter {
+    margin-bottom: 20px;
+}
+
+.star-rating {
+    margin-bottom: 20px;
+}
+
+.star {
+    cursor: pointer;
+}
+
+.star i {
+    font-size: 20px;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.star i.filled {
+    color: #ffc107; /* Change to your desired filled star color */
+}
+
+.input {
+    width: 150px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-apply {
+
+    box-shadow: #ffffff;
+    background-color: #00b307;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px; 
+
+
+    color: #fff; 
+    box-shadow: #999;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền khi di chuột qua */
+}
+
+.button-apply:hover {
+    background-color: #245a25; /* Màu nền khi di chuột qua */
+
+}
+
+.checkbox-item {
+    display: block;
+    margin-top: 3px;
+}
+.cate {
+    font-weight: bold; /* In đậm */
+    display: block;
+    text-align: center; /* Căn giữa */
+    margin-bottom: 20px; /* Margin bottom */
+}
+
+
+
+.bold-text {
+    font-weight: bold;
+}
+.bold-green {
+    font-weight: bold;
+    color: #006400; /* Mã màu xanh lá cây đậm */
+}
+

@@ -1,0 +1,62 @@
+<div class="create-campaign-container" *ngIf="showCreateCampaign">
+    <h2>Create New Campaign</h2>
+
+    <!-- Campaign info -->
+    <div class="campaign-info">
+        <h2>Campaign Info</h2>
+        <label for="campaignName">Campaign Name:</label>
+        <input type="text" id="campaignName" [(ngModel)]="newCampaign.name">
+        <label for="campaignDescription">Description:</label>
+        <input type="text" id="campaignDescription" [(ngModel)]="newCampaign.description">
+    </div>
+
+    <!-- Time Manage -->
+    <div class="time-manage">
+        <h2>Time Manage</h2>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" [(ngModel)]="newCampaign.startDate">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" [(ngModel)]="newCampaign.endDate">
+    </div>
+
+    <!-- Promotion Type -->
+<div class="promotion-category">
+    <h2>Promotion type</h2>
+    <select id="promotionType" [(ngModel)]="newCampaign.promotionType">
+        <option value="" disabled selected>Choose one</option>
+        <option value="samePrice">Same Price</option>
+        <option value="productDiscount">Product Discount</option>
+    </select>
+</div>
+
+<!-- Same Price -->
+<div *ngIf="newCampaign.promotionType === 'samePrice'" class="product-category">
+    <input type="number" id="fixedPrice" [(ngModel)]="newCampaign.fixedPrice" placeholder="Fixed Price" title="Hint: 0">
+</div>
+
+<!-- Product Discount -->
+<div *ngIf="newCampaign.promotionType === 'productDiscount'" class="product-category">
+    <input type="number" id="discountLevel" [(ngModel)]="newCampaign.discountLevel" placeholder="Discount Level" title="Hint: 0">
+</div>
+
+    <!-- Applied Object -->
+    <div class="product-category">
+        <h2>Apply For</h2>
+        <select id="appliedObject" [(ngModel)]="newCampaign.appliedObject">
+            <option value="" disabled selected>Product Categories</option>
+            <option value="specificProduct">Specific Product</option>
+            <option value="productCategory">Product Category</option>
+        </select>
+    </div>
+    <input *ngIf="newCampaign.appliedObject === 'productCategory'" type="number" id="productCategory" [(ngModel)]="newCampaign.productCategory" placeholder="Product Category Number">
+
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <button class="btn btn-primary" (click)="saveCampaign()">Save</button>
+        <button class="btn btn-primary" (click)="cancelCampaign()">Cancel</button>
+        <!-- Thêm nút "Close" -->
+        <button class="btn btn-primary" (click)="closePopupWindow()">Close</button>
+
+    </div>
+</div>

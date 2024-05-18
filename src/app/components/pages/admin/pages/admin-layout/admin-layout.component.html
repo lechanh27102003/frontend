@@ -1,0 +1,19 @@
+<!-- admin-layout.component.html -->
+
+<div class="admin-container">
+    <!-- Sidebar component -->
+    <div class="sidebar">
+        <app-admin-sidebar></app-admin-sidebar>
+    </div>
+  
+    <div class="admin-content">
+        <!-- Admin Header component -->
+        <app-admin-header></app-admin-header>
+  
+        <!-- Main section -->
+        <div class="main-section">
+            <router-outlet></router-outlet>
+            <!-- Đây là nơi hiển thị nội dung tương ứng với route được điều hướng -->
+        </div>
+    </div>
+</div>

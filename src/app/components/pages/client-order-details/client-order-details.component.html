@@ -1,0 +1,51 @@
+<div class="container">
+    <h2>Order Details</h2>
+    <div *ngIf="order" class="order-details columns">
+        <div class="left-column">
+            <fieldset>
+                <legend>Basic Information</legend>
+                <div><label>Order ID:</label> <span>{{ order._id }}</span></div>
+                <div><label>Order Date:</label> <span>{{formatDateString (order.orderDate) }}</span></div>
+                <div><label>Username:</label> <span>{{ order.userName }}</span></div>
+            </fieldset>
+            <fieldset>
+                <legend>Products</legend>
+                <ul>
+                    <li *ngFor="let product of order.products">
+                        <img [src]="product.productImage" alt="Product Image" style="width: 50px; height: auto;">
+                        <span><b>{{ product.productName }}</b> (Quantity: {{ product.quantity }}, Price: {{ product.price | currency:'VND' }})</span>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Costs</legend>
+                <div><label>Subtotal:</label> <span>{{ order.subTotal | currency:'VND'}}</span></div>
+                <div><label>Shipping Fee:</label> <span>{{ order.shippingFee | currency:'VND'}}</span></div>
+                <div><label>Discount:</label> <span>{{ order.discountPrice | currency:'VND'}}</span></div>
+                <div><label>Total:</label> <span>{{ order.totalPrice | currency:'VND'}}</span></div>
+            </fieldset>
+        </div>
+        <div class="right-column">
+            <fieldset>
+                <legend>Shipping Information</legend>
+                <div><label>Full Name:</label> <span>{{ order.shipTo.fullName }}</span></div>
+                <div><label>Phone:</label> <span>{{ order.shipTo.phone }}</span></div>
+                <div><label>Email:</label> <span>{{ order.shipTo.email }}</span></div>
+                <div><label>Address:</label> <span>{{ order.shipTo.address }}</span></div>
+                <div><label>Note:</label> <span>{{ order.shipTo.note }}</span></div>
+                <div class="row">
+                    <div class="col"><label>City:</label> <span>{{ order.shipTo.city }}</span></div>
+                    <div class="col"><label>District:</label> <span>{{ order.shipTo.district }}</span></div>
+                    <div class="col"><label>Ward:</label> <span>{{ order.shipTo.ward }}</span></div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Order Management</legend>
+                <div><label>Status:</label> <span>{{ order.status }}</span></div>
+            </fieldset>
+        </div>
+    </div>
+    <button *ngIf="order.status === 'Processing'" (click)="cancelOrder()">Cancel Order</button>
+    <button *ngIf="order.status === 'Delivering'" (click)="markOrderReceived()">Received Order</button>
+    <button *ngIf="order.status === 'Finished'" (click)="writeReview()">Write Review</button>
+</div>

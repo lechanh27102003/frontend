@@ -1,0 +1,50 @@
+<div class="create-code-container" *ngIf="showCreateCode">
+    <h2>Create New Code</h2>
+
+    <!-- Code info -->
+    <div class="code-info">
+        <h3>Code Info</h3>
+        <label for="codeName">Code</label>
+        <input type="text" id="codeName" [(ngModel)]="newCode.name">
+        <label for="codeDescription">Description</label>
+        <input type="text" id="codeDescription" [(ngModel)]="newCode.description">
+    </div>
+
+    <!-- Time Manage -->
+    <div class="time-manage">
+        <h3>Time Manage</h3>
+        <label for="codeStartDate">Start Date:</label>
+        <input type="date" id="codeStartDate" [(ngModel)]="newCode.startDate">
+        <label for="codeEndDate">End Date:</label>
+        <input type="date" id="codeEndDate" [(ngModel)]="newCode.endDate">
+    </div>
+
+    <div class="promotion-category">
+        <h3>Promotion category</h3>
+        <select id="promotionType" [(ngModel)]="newCode.promotionType" (change)="onPromotionTypeChange()">
+            <option value="" disabled selected>Select one</option>
+            <option value="discountByPercentage">Discount by percentage</option>
+            <option value="discountByAmount">Discount by amount</option>
+        </select>
+    </div>
+    
+    <div class="discount-details">
+        <input *ngIf="newCode.promotionType === 'discountByAmount'" type="number" id="discountAmount" [(ngModel)]="newCode.discountAmount">
+        <input *ngIf="newCode.promotionType === 'discountByPercentage'" type="number" id="discountAmount" [(ngModel)]="newCode.discountAmount">
+        <input type="text" id="discountType" [(ngModel)]="newCode.discountType" [value]="discountTypeValue">
+    </div> 
+    
+
+    <div class="limit-uses-container">
+            <label for="limitUsesCheckbox">Limit the total number of uses</label>
+            <input type="number" id="totalUses" [(ngModel)]="newCode.totalUses" placeholder="Limit the total number of uses" class="wide-input">
+    </div>
+    
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <button class="btn btn-primary" (click)="saveCode()">Save</button>
+        <button class="btn btn-primary" (click)="cancelCode()">Cancel</button>
+        <button class="btn btn-primary" (click)="closePopupWindow()">Close</button>
+    </div>
+</div>

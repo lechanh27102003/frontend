@@ -1,0 +1,114 @@
+<div class="navigation-bar">
+  <a routerLink="/">
+    <img src="../../../../assets/image/homepage.png" alt="Homepage" class="nav-image">
+</a>
+<span class="separator">&gt;</span>
+  <a routerLink="/cart" class="nav-link" >Cart</a>
+<span class="separator">&gt;</span>
+  <a routerLink="/shipping-info" class="nav-link" >Checkout</a>
+</div>
+    <form (ngSubmit)="placeOrder()" class="checkout-form">
+          <div class="shipping-info">
+             <!-- Left column for shipping info -->
+              <h4>Shipping Information</h4>
+              <!-- Shipping Information Inputs -->
+              <div class="checkout__input">
+                <p>Full Name<span>*</span></p>
+                <input type="text" style="color: black"placeholder="Full Name" name="fullname" required [(ngModel)]="orderForm.fullName">
+              </div>
+              <table>
+                <tr>
+              <td><div class="checkout__input">
+                <p>Province/City<span>*</span></p>
+                <input type="text" style="color: black" placeholder="Province/City" name="town" required [(ngModel)]="orderForm.city">
+              </div></td>
+              <td>
+              <div class="checkout__input">
+                <p>District<span>*</span></p>
+                <input type="text" style="color: black" placeholder="District" name="district" required [(ngModel)]="orderForm.district">
+              </div></td>
+              <td>
+              <div class="checkout__input" >
+                <p>Ward<span>*</span></p>
+                <input type="text" style="color: black" placeholder="Ward" name="ward" required [(ngModel)]="orderForm.ward">
+              </div></td>
+              </tr></table>
+              <div class="checkout__input">
+                <p>Address (House number, street, village,...)<span>*</span></p>
+                <input type="text" style="color: black" placeholder="Specific Address" name="address" required [(ngModel)]="orderForm.address">
+              </div>
+              <div class="checkout__input">
+                <p>Email</p>
+                <input type="text" style="color: black" placeholder="Email" name="email" [(ngModel)]="orderForm.email">
+              </div>
+              <div class="checkout__input">
+                <p>Phone Number<span>*</span></p>
+                <input type="text" style="color: black" placeholder="Phone number" name="phone" maxlength="10" required [(ngModel)]="orderForm.phone">
+              </div>
+              <div class="checkout__input">
+                <p>Notes (optional)</p>
+                <input type="text" style="color: black" placeholder="Special notes for the order, delivery" name="note" [(ngModel)]="orderForm.note">
+              </div>
+          
+          </div>
+            <!-- Right column for order summary and payment -->
+              <!-- Order Summary and Payment Method -->
+              <div class="order-summary">
+                <h4>Order</h4>
+                <ul>
+                  <li *ngFor="let item of cart.items" class="checkout__cart__item">
+                      <img [src]="item.product.image" alt="{{ item.product.productName }}" class="checkout__cart__item__image">
+                      <div class="checkout__cart__item__text">
+                          <h5>{{ item.product.productName }}</h5>
+                          <p>Qty: {{ item.quantity }} Total: {{ item.price | currency:'VND' }}</p>
+                      </div>
+                  </li>
+              </ul>
+              
+              
+                <div class="checkout__order__subtotal">Sub Total <span>{{ cart.totalPrice | currency:'VND' }}</span></div>
+                <div class="checkout__order__shipfee">Shipping Fee <span>đ30,000</span></div>
+                <div class="checkout__order__discount">Discount Price <span>{{discountPrice | currency:'VND'}}</span></div>
+                <div class="discount-wrapper">
+                  <input class="discount-input" type="text" placeholder="Discount voucher"  [(ngModel)]="code"  name="code" [ngModelOptions]="{standalone: true}">
+                  <button type="button" class="apply-btn" (click)="applyDiscountCode()" >Apply</button>
+              </div>
+              <p>{{ description }}</p>
+              
+              <div class="checkout__order__total">
+                Total <span>{{ (cart.totalPrice + 30000 - discountPrice) | currency:'VND' }}</span>
+              </div>
+              
+                <div class="payment-method">
+                  <h4>Payment Method</h4>
+                  <div>
+                      <label>
+                          <input type="radio" name="paymentMethod" value="cod" (change)="setPaymentMethod('Cash on delivery (COD)')">
+                          Cash On Delivery (COD)
+                      </label>
+                  </div>
+                  <div>
+                      <label>
+                          <input type="radio" name="paymentMethod" value="transfer" (change)="setPaymentMethod('Bank Transfer')">
+                          Bank Transfer
+                      </label>
+                  </div>
+                  <button type="submit" class="site-btn">Place Order</button>
+              </div>
+              
+                <div *ngIf="paymentMethod === 'Bank Transfer'">
+                  <p><b>Note:</b>
+                    <br><p style="color: gray;">
+                      <i>*Please make the transfer within 12 hours from the time of placing the order. After the transfer, the order will be processed and shipped within 24 hours. If the order has not been shipped after 24 hours, please contact customer service for support.</i>
+                    </p>
+                  </p>
+                </div>
+               
+              </div>
+        </form>
+        <div *ngIf="showToast" class="toast">
+          {{ toastMessage }}
+        </div>
+   
+    
+ 

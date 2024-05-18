@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="content">
+        <div id="main-section" class="main-section">
+            <div name="title" class="title-content">
+                    <h2>Orders</h2>
+            </div>
+
+                <!-- Status Filter Dropdown -->
+                <div class="status-filter">
+                    <select [(ngModel)]="selectedStatus" (change)="filterOrdersByStatus()">
+                        <option value="">All Status</option>
+                        <option value="Processing">Processing</option>
+                        <option value="Delivering">Delivering</option>
+                        <option value="Finished">Finished</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                </div>
+
+            <div class="maintable">
+                <table>
+                    <thead>
+                        <tr>
+                         
+                            <th>ORDER ID</th>
+                            <th>ORDER DATE</th>
+                            <th>TOTAL</th>
+                            <th>PAYMENT METHOD</th>
+                            <th>STATUS</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tbody>
+                            <tr *ngFor="let order of displayedOrders">
+                                <td><a [routerLink]="['/client-order-details', order._id]">{{ order._id }}</a></td>
+                                <td>{{ order.orderDate | date:'dd/MM/yyyy' }}</td>
+                                <td>{{ order.totalPrice | currency:'VND' }}</td>
+                                <td>{{ order.paymentMethod }}</td>
+                                <td>
+                                    <span class="status" [ngClass]="{
+                                        'status': true,
+                                        'Cancelled': order.status === 'Cancelled',
+                                        'Delivering': order.status === 'Delivering',
+                                        'Processing': order.status === 'Processing',
+                                        'Finished': order.status === 'Finished'
+                                    }">{{ order.status }}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+           
+                </table>
+            </div>
+             <!-- Khúc cho hiện pages Number -->
+            <div class="pagination">
+                <span class="pagination-info">Showing {{ currentPage > 2 ? currentPage - 1 : 1 }}-{{ currentPage < totalPages - 1 ? currentPage + 1 : totalPages }} from {{ totalPages }}</span>
+                <div class="pagination-buttons">
+                    <button (click)="changePage(currentPage - 1)"
+                            [disabled]="currentPage === 1"
+                            [class.active]="currentPage === 1">&lt;</button>
+            
+                    <ng-container *ngIf="currentPage > 2">
+                        <span class="dots">...</span>
+                    </ng-container>
+            
+                    <ng-container *ngFor="let pageNumber of pageNumbers.slice(currentPage > 2 ? currentPage - 2 : 0, currentPage + 1)" >
+                        <button (click)="changePage(pageNumber)"
+                                [class.active]="pageNumber === currentPage">{{ pageNumber }}</button>
+                    </ng-container>
+            
+                    <ng-container *ngIf="currentPage < totalPages - 1">
+                        <span class="dots">...</span>
+                    </ng-container>
+            
+                    <button (click)="changePage(currentPage + 1)"
+                            [disabled]="currentPage === totalPages"
+                            [class.active]="currentPage === totalPages">&gt;</button>
+                </div>
+       
+            
+                
+        </div>
+    </div>
+</div>
+</div>
+

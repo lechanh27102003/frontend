@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="flex" *ngFor="let fb of feedbacks">
+        <div class="feedback">
+            <div class="infor">
+                <img class="image" src="{{fb.user.profilePicture}}" />
+                <div class="name">
+                    <span>{{ fb.user.name }}</span>
+                    <div class="star-rating">
+                        <span class="star" *ngFor="let star of [1, 2, 3, 4, 5]">
+                          <i class="fa fa-star" [ngClass]="{'filled':star <= fb.feedback.rating}"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <span class="content">{{ fb.feedback.description }}</span>
+            <img class="fb-image" src="{{fb.feedback.image}}" />
+        </div>
+        <span class="time">{{ fb.feedback.time }}</span>
+    </div>
+</div>

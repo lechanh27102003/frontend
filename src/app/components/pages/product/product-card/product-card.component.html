@@ -1,0 +1,21 @@
+<div class="product-row">
+	<div class="product-card" (click)="onCardClick(product._id)">
+		<img src="{{ product.image }}" class="image" />
+		<div class="detail">
+			<div>
+				<div>
+					<p class="title">{{ product.productName }}</p>
+				</div>
+				<div *ngIf="product.discount > 0"><b class="price">{{ product.price | currency:'VND' }}</b></div>
+				<div><b class="discount-price">{{ discountPrice | currency:'VND' }}</b></div>
+				<div class="star-rating">
+					<span class="star" *ngFor="let star of [1, 2, 3, 4, 5]">
+						<i class="fa fa-star" [ngClass]="{'filled':star <= product.rating}"></i>
+					</span>
+				</div>
+			</div>
+			<div>
+				<i class="cart fa-solid fa-bag-shopping" (click)="addToCart($event, product)"></i>
+			</div>
+		</div>
+	</div>

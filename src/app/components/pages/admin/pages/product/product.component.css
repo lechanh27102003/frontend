@@ -1,0 +1,406 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #FFFFFF;
+    transition: var(--trans-02);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    display: flex;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section {
+    background-color: #fbfbfc;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Header styles */
+.admin-header {
+    height: 42px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Title styles */
+.title-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main-section h1 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #333843;
+}
+
+.main-section .nav {
+    font-weight: 500;
+    font-size: 14px;
+    color: #2B572E;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Button styles */
+.export,
+.add {
+    width: 140px;
+    height: 40px;
+    background: #F0F1F3;
+    display: inline-block;
+    margin-left: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.005em;
+    color: #1A1A1A;
+    border: 0px;
+    cursor: pointer;
+}
+
+.add {
+    background: #2C742F;
+    color: #FFFFFF;
+}
+
+.export:active,
+.add:active {
+    transform: translateY(2px);
+}
+
+/* Filter styles */
+.buttonfilterframe {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    width: 100%;
+    height: 40px;
+    margin-top: 50px;
+}
+
+.filterframe {
+    border: 1px solid #E0E2E7;
+    border-radius: 8px;
+}
+
+
+/* Search styles */
+.search {
+    display: flex;
+    align-items: center;
+    padding: 2px 12px;
+    gap: 4px;
+    width: 320px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 1px solid #E0E2E7;
+    border-radius: 8px;
+}
+
+.search input {
+    border: 0px solid #E0E2E7;
+    width: 300px;
+    height: 32px;
+}
+
+.search input:focus {
+    outline: none;
+    /* Xóa viền khi ô input được focus */
+}
+
+/* Table styles */
+.maintable {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.maintable table {
+    margin-top: 24px;
+    width: 100%;
+    border: 1px solid #F0F1F3;
+    border-collapse: collapse;
+}
+
+.maintable thead {
+    font-size: 14px;
+    color: #333843;
+    background-color: #eff1f5;
+    height: 56px;
+    text-align: left;
+}
+
+.maintable tbody {
+    font-weight: 300;
+    line-height: 10px;
+    color: #667085;
+    text-align: left;
+    background-color: white;
+}
+
+.maintable th input[type=checkbox],
+.maintable td input[type=checkbox] {
+    margin-left: 8px;
+    /* Khoảng cách từ lề trái của ô */
+    padding-left: 10px;
+    /* Khoảng cách từ ô checkbox đến nội dung bên trong */
+    vertical-align: middle;
+    /* Căn giữa theo chiều dọc */
+}
+
+.maintable tbody tr {
+    border-bottom: 1px solid #E0E2E7;
+    /* Đường kẻ ngang giữa các hàng */
+}
+
+.maintable tbody td {
+    padding: 12px 0;
+    /* Khoảng cách giữa nội dung và mép của ô */
+    font-size: 14px;
+    /* Kích thước chữ cho nội dung */
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.deleted {
+    background-color: #FDF1E8;
+    color: #EA4B48;
+}
+
+.uploaded {
+    background-color: #E7F4EE;
+    color: #0D894F;
+}
+
+/* Navigation styles */
+.navigation {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation span {
+    font-size: 14px;
+    color: #667085;
+}
+
+.navigation input[type="button"] {
+    width: 32px;
+    height: 32px;
+    background: #B4CCB4;
+    border-radius: 8px;
+    border: 0px;
+    cursor: pointer;
+}
+
+
+.navigation input[type="button"]:visited {
+    color: #ffffff;
+    background: #2C742F;
+}
+
+.navigation input[type="button"]:focus {
+    outline: none;
+    color: #ffffff;
+    background: #2C742F;
+}
+
+.delete {
+    font-size: large;
+    background: red;
+    padding: 5px;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.edit {
+    font-size: large;
+    background: orange;
+    padding: 5px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.save {
+    font-size: large;
+    background: rgb(128, 202, 245);
+    padding: 5px;
+    border: 1px solid rgb(128, 202, 245);
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.editcol {
+    padding: 5px;
+}
+
+.buttonfilter button {
+    padding: 6px 12px;
+    gap: 8px;
+    width: 126px;
+    height: 32px;
+    background: #ffffff;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.005em;
+    color: #667085;
+    border: 0px;
+    cursor: pointer;
+  }
+
+  .buttonfilter button:visited {
+    background: #2C742F;
+    color: #FFFFFF;
+  }
+
+  .buttonfilter button:focus {
+    outline: none;
+    background: #2C742F;
+    color: #FFFFFF;
+  }
+
+  .buttonfilter button.Activated {
+    /* Add styles for activated buttons */
+    background-color: #2C742F;
+    /* Blue color, you can change it */
+    color: #ffffff;
+    /* White text color, you can change it */
+  }
+
+  .buttonfilter button.Notactivated {
+    /* Add styles for not activated buttons */
+    background-color: #f8f9fa;
+    /* Light gray color, you can change it */
+    color: #495057;
+    /* Dark gray text color, you can change it */
+  }
+
+  /* Add hover effect */
+  .buttonfilter button:hover {
+    cursor: pointer;
+  }
+
+  /* Add active effect */
+  .buttonfilter button:active {
+    transform: translateY(1px);
+  }
+  .navigation-bar {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    margin-right: 5px;
+}
+
+.nav-link:hover {
+    color: #00B207;
+}
+
+.nav-image {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.separator {
+    margin-right: 5px;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Đảm bảo modal hiển thị trên tất cả các phần khác */
+    max-width: 400px; /* Đảm bảo modal không quá rộng */
+    width: 90%; /* Chỉ định chiều rộng tối đa */
+}
+
+.modal h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+label {
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #2C742F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cancelCampaign {
+    margin-left: 5px;
+    padding: 10px 20px;
+    background-color: rgb(233, 232, 232);
+    color:  #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d2d4d2;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+}
+
