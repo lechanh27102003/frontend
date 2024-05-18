@@ -20,7 +20,6 @@ import { ProductComponent } from './components/pages/admin/pages/product/product
 import { OrderComponent } from './components/pages/admin/pages/order/order.component';
 import { CustomerComponent } from './components/pages/admin/pages/customer/customer.component';
 import { PromotionComponent } from './components/pages/admin/pages/promotion/promotion.component';
-import { FeedbackComponent } from './components/pages/admin/pages/feedback/feedback.component';
 import { BlogComponent } from './components/pages/admin/pages/blog/blog.component';
 import { AuthorityComponent } from './components/pages/admin/pages/authority/authority.component';
 import { AdminHeaderComponent } from './components/pages/admin/partials/admin-header/admin-header.component';
@@ -97,7 +96,6 @@ import { InspectionComponent } from './components/pages/inspection/inspection.co
     OrderComponent,
     CustomerComponent,
     PromotionComponent,
-    FeedbackComponent,
     BlogComponent,
     AuthorityComponent,
     AdminHeaderComponent,
