@@ -17,7 +17,6 @@ import { OrderComponent } from './components/pages/admin/pages/order/order.compo
 import { CustomerComponent } from './components/pages/admin/pages/customer/customer.component';
 import { PromotionComponent } from './components/pages/admin/pages/promotion/promotion.component';
 import { BlogComponent } from './components/pages/admin/pages/blog/blog.component';
-import { FeedbackComponent } from './components/pages/admin/pages/feedback/feedback.component';
 import { AuthorityComponent } from './components/pages/admin/pages/authority/authority.component';
 import { FbPopupComponent } from './components/pages/admin/partials/fb-popup/fb-popup.component';
 import { ProductClientComponent } from './components/pages/product/product.component';
@@ -54,7 +53,6 @@ const routes: Routes = [
       { path: 'customer', component: CustomerComponent },
       { path: 'promotion', component: PromotionComponent },
       { path: 'blog', component: BlogComponent },
-      { path: 'feedback', component: FeedbackComponent },
       { path: 'authority', component: AuthorityComponent },
       { path: 'fb-popup',component: FbPopupComponent},
       { path: 'admin-contact', component: AdminContactComponent},
