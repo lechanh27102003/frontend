@@ -10,7 +10,7 @@ import { map, Observable } from "rxjs";
 
 export class ProductCLientService {
 	constructor(private http: HttpClient) { }
-	apiUrl = 'http://localhost:3002/api/products';
+	apiUrl = 'https://plantique-api.onrender.com/api/products';
 
 	getProducts(categoryId: number) {
 		if (Number(categoryId) === 0)
