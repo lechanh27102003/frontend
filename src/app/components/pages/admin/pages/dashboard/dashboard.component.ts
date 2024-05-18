@@ -3,7 +3,7 @@ import { Route, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { OrderService } from '../../../../../service/order.service';
 import { Order } from '../../../../../models/order';
-const baseUrl = 'http://localhost:3002'
+const baseUrl = 'https://plantique-api.onrender.com/'
 
 @Component({
   selector: 'app-dashboard',

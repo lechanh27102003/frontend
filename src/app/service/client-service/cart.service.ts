@@ -13,7 +13,7 @@ export class CartService {
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
 
   
-  apiUrl = 'http://localhost:3002/api/products'; 
+  apiUrl = 'https://plantique-api.onrender.com/api/products'; 
 
   constructor(private http: HttpClient, public toast: NgToastService) { }
 

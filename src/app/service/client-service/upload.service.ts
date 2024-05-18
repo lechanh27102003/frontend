@@ -7,7 +7,7 @@ import { switchMap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class UploadService {
-  private baseUrl = 'http://localhost:3002'; 
+  private baseUrl = 'https://plantique-api.onrender.com/'; 
 
   constructor(private http: HttpClient) {}
 

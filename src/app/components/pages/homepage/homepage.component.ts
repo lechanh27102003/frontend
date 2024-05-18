@@ -45,7 +45,7 @@ export class HomepageComponent implements OnInit {
 			this.discountPrice = product.price;
 	}
   getProducts() {
-    this.http.get('http://localhost:3002/api/products/getall/0').subscribe({
+    this.http.get('https://plantique-api.onrender.com/api/products/getall/0').subscribe({
       next : data => {
         if (Array.isArray(data)) {
           this.products = data.slice(0, 8);
@@ -57,7 +57,7 @@ export class HomepageComponent implements OnInit {
     })
   }
   getListCategory() {
-    this.http.get('http://localhost:3002/api/categories').subscribe({
+    this.http.get('https://plantique-api.onrender.com/api/categories').subscribe({
       next:res =>{
         this.categories = res;
       },error: err=>{

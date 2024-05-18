@@ -7,7 +7,7 @@ import { Order } from '../models/order';// Update path as needed
   providedIn: 'root'
 })
 export class OrderService {
-  private apiUrl = 'http://localhost:3002/api/orders'; // Adjust if your base URL differs
+  private apiUrl = 'https://plantique-api.onrender.com/api/orders'; // Adjust if your base URL differs
   private orderData: any;
 
   constructor(private http: HttpClient) {}

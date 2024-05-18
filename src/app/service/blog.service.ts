@@ -9,7 +9,7 @@ import { Blog } from '../models/blog';
   providedIn: 'root'
 })
 export class BlogService {
-  private baseUrl = 'http://localhost:3002/api/blogs'; // URL của API
+  private baseUrl = 'https://plantique-api.onrender.com/api/blogs'; // URL của API
 
   constructor(private http: HttpClient) {}
 

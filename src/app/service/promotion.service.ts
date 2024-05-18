@@ -7,18 +7,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PromotionService {
-    private apiUrl = `http://localhost:3002/api/codes`;
+    private apiUrl = `https://plantique-api.onrender.com/api/codes`;
   constructor(private http: HttpClient) {}
   
 
   getAllCodes() {
-    return this.http.get<any[]>('http://localhost:3002/api/codes');
+    return this.http.get<any[]>('https://plantique-api.onrender.com/api/codes');
   }
   deleteCode(codeId: string): Observable<any> {
-    return this.http.delete<any>(`http://localhost:3002/api/codes/${codeId}`);
+    return this.http.delete<any>(`https://plantique-api.onrender.com/api/codes/${codeId}`);
   }
   updateCode(code: any): Observable<any> {
-    const url = `http://localhost:3002/api/codes/${code._id}`;
+    const url = `https://plantique-api.onrender.com/api/codes/${code._id}`;
     return this.http.put<any>(url, code);
   }
 applyDiscountCode(code: string, orderTotal: number): Observable<any> {
@@ -27,25 +27,25 @@ applyDiscountCode(code: string, orderTotal: number): Observable<any> {
   return this.http.post<any>(url, { code, orderTotal }); 
 }
 getAllCampaignsForProduct(): Observable<any> {
-  return this.http.get<any[]>(`http://localhost:3002/api/campaigns/applied/`);
+  return this.http.get<any[]>(`https://plantique-api.onrender.com/api/campaigns/applied/`);
 }
 
 applyCampaignToProducts(campaignId: string, productIds: string[]): Observable<any> {
   // Truyền thông tin productIds vào body của request
-  return this.http.put<any>(`http://localhost:3002/api/campaigns/apply/${campaignId}`, { productIds });
+  return this.http.put<any>(`https://plantique-api.onrender.com/api/campaigns/apply/${campaignId}`, { productIds });
 }
 getAllCampaigns(): Observable<any[]> {
-  return this.http.get<any[]>(`http://localhost:3002/api/campaigns/`);
+  return this.http.get<any[]>(`https://plantique-api.onrender.com/api/campaigns/`);
 }
 
 getCampaignById(campaignId: string): Observable<any> {
-  return this.http.get<any>(`http://localhost:3002/api/campaigns/${campaignId}`);
+  return this.http.get<any>(`https://plantique-api.onrender.com/api/campaigns/${campaignId}`);
 }
 updateCampaign(campaign: any): Observable<any> {
-  return this.http.put<any>(`http://localhost:3002/api/campaigns/${campaign._id}`, campaign);
+  return this.http.put<any>(`https://plantique-api.onrender.com/api/campaigns/${campaign._id}`, campaign);
 }
 
 deleteCampaign(campaignId: string): Observable<any> {
-  return this.http.delete<any>(`http://localhost:3002/api/campaigns/${campaignId}`);
+  return this.http.delete<any>(`https://plantique-api.onrender.com/api/campaigns/${campaignId}`);
 }
 }

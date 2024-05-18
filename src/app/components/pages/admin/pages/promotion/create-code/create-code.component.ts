@@ -25,7 +25,7 @@ export class CreateCodeComponent implements OnInit {
   }
 
   saveCode() {
-    this.http.post<any>('http://localhost:3002/api/codes', this.newCode)
+    this.http.post<any>('https://plantique-api.onrender.com/api/codes', this.newCode)
       .subscribe(
         response => {
           console.log('Code saved successfully:', response);

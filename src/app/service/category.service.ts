@@ -9,7 +9,7 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl = 'http://localhost:3002/api/categories';
+  private apiUrl = 'https://plantique-api.onrender.com/api/categories';
   categoryId !: number;
   updateTitle : EventEmitter<any> = new EventEmitter<any>();
   getListCategory():Observable<any>{

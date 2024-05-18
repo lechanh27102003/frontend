@@ -15,7 +15,7 @@ export class CouponCardComponent {
 
   async loadCodes() {
     try {
-      const response: any = await this.http.get('http://localhost:3002/api/codes').toPromise();
+      const response: any = await this.http.get('https://plantique-api.onrender.com/api/codes').toPromise();
       if (Array.isArray(response)) {
         // Take the first 3 codes or all codes if less than 3
         const codesToDisplay = response.slice(0, 3);

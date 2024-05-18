@@ -7,7 +7,7 @@ import { Contact } from '../models/contact'; // Make sure to define this model b
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = 'http://localhost:3002/api/contacts'; // Adjust the port and route as necessary
+  private apiUrl = 'https://plantique-api.onrender.com/api/contacts'; // Adjust the port and route as necessary
 
   constructor(private http: HttpClient) { }
 

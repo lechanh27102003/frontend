@@ -9,7 +9,7 @@ import { catchError, map } from 'rxjs/operators';
 export class AuthService {
   logoutEvent: EventEmitter<void> = new EventEmitter<void>();
   loginSuccessEvent: EventEmitter<any> = new EventEmitter<any>();
-  private baseUrl = 'http://localhost:3002/api/auth'; 
+  private baseUrl = 'https://plantique-api.onrender.com/api/auth'; 
 
   constructor(private http: HttpClient) {}
 
@@ -45,7 +45,7 @@ export class AuthService {
     return userString ? JSON.parse(userString) : null;
   }
   getUserById(userId: string): Observable<any> {
-    return this.http.get<any>(`http://localhost:3002/api/users/${userId}`).pipe(
+    return this.http.get<any>(`https://plantique-api.onrender.com/api/users/${userId}`).pipe(
       catchError((error) => {
         return throwError(() => new Error(error.message));
       })

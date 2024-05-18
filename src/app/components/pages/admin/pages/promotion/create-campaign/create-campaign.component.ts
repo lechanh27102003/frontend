@@ -25,7 +25,7 @@ export class CreateCampaignComponent implements OnInit {
   }
 
   saveCampaign() {
-    this.http.post<any>('http://localhost:3002/api/campaigns', this.newCampaign)
+    this.http.post<any>('https://plantique-api.onrender.com/api/campaigns', this.newCampaign)
     .subscribe((data) => {
       console.log("Campaign saved:", data);
       this.campaignCreated.emit(data);
