@@ -2,72 +2,37 @@ form {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between; /* This should space the columns effectively */
-  align-items: flex-start; /* Aligns items at the top */
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .shipping-info {
-  flex: 2; /* Taking up nearly half the container */
-  min-width: 300px; /* Ensuring they don’t get too small */
+  flex: 2;
+  min-width: 300px;
   background: #fff;
   padding: 20px;
-  margin-left:10%;
+  margin-left: 10%;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .order-summary {
-  flex: 1; /* Taking up nearly half the container */
-  min-width: 300px; /* Ensuring they don’t get too small */
+  flex: 1;
+  min-width: 300px;
   background: #fff;
   padding: 20px;
-  margin-right:10%;
+  margin-right: 10%;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
   form {
-      flex-direction: column;
+    flex-direction: column;
   }
   .shipping-info, .order-summary {
-      flex-basis: 100%; /* Full width on smaller screens */
+    flex-basis: 100%;
   }
-}
-
-
-.checkout h6 {
-  color: #999999;
-  text-align: center;
-  background: #f5f5f5;
-  border-top: 1px solid #6AB963;
-  padding: 12px 0;
-  margin-bottom: 75px;
-}
-
-.checkout h6 span {
-  font-size: 16px;
-  color: #6AB963;
-  margin-right: 5px;
-}
-
-.checkout h6 a {
-  text-decoration: underline;
-  color: #999999;
-}
-
-
-.checkout__form h4, .checkout__order h4 {
-  color: #1c1c1c;
-  font-weight: 700;
-  border-bottom: 1px solid #e1e1e1;
-  padding-bottom: 20px;
-  margin-bottom: 25px;
-}
-
-.checkout__form p, .checkout__order p {
-  color: #1c1c1c;
-  margin-bottom: 20px;
 }
 
 .checkout__input {
@@ -96,257 +61,155 @@ form {
   color: #b2b2b2;
 }
 
-.checkout__input__checkbox label {
-  margin-top:5px;
-  position: relative;
-  font-size: 16px;
-  color: #1c1c1c;
-  padding-left: 40px;
-  cursor: pointer;
-}
-
-.checkout__input__checkbox label input {
-  position: absolute;
-  visibility: hidden;
-}
-
-.checkout__input__checkbox label .checkmark {
-  position: absolute;
-  left: 0;
-  top: 4px;
-  height: 16px;
-  width: 14px;
-  border: 1px solid #a6a6a6;
-  border-radius: 4px;
-}
-
-.checkout__input__checkbox label .checkmark:after {
-  position: absolute;
-  left: 1px;
-  top: 1px;
-  width: 10px;
-  height: 8px;
-  border: solid white;
-  border-width: 3px 3px 0 0;
-  transform: rotate(127deg);
-  opacity: 0;
-}
 .shipping-info table {
-  width: 80%; /* Set the table width to 80% of the form's width */
-  margin-left: 0px; /* Centering the table by setting left and right margins */
+  width: 80%;
+  margin-left: 0;
   margin-right: auto;
 }
-.checkout__cart__item__image {
-  width: 50px; /* Adjust width as necessary */
-  height: 50px; /* Adjust height to maintain aspect ratio */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-  border-radius: 4px; /* Optional: Adds rounded corners to the images */
-  margin-right: 10px; /* Adds space between the image and the text next to it */
-}
 
-
-.shipping-info th {
-  font-weight: normal; /* Removes bold styling from th elements */
-  text-align: left; /* Aligns text to the left */
-  padding-right: 20px; /* Adds spacing between the columns */
-}
-.shipping-info td {
-  font-weight: normal; /* Removes bold styling from th elements */
-  text-align: left; /* Aligns text to the left */
-  padding-right: 20px; /* Adds spacing between the columns */
+.shipping-info th, .shipping-info td {
+  font-weight: normal;
+  text-align: left;
+  padding-right: 20px;
 }
 
 .shipping-info input {
-  width: 100%; /* Ensures inputs take full width of the th element */
-  box-sizing: border-box; /* Includes padding and border in the element's total width */
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .checkout__cart__item {
   display: flex;
-  align-items: center;  /* Aligns items vertically to the center */
-  margin-bottom: 20px;  /* Adds space between each item */
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .checkout__cart__item__image {
-  width: 80px;  /* Set appropriate width */
-  height: auto;  /* Maintain aspect ratio */
-  margin-right: 20px;  /* Space between image and text */
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
 }
 
 .checkout__cart__item__text {
   display: flex;
-  flex-direction: column;  /* Organizes the text into a column */
+  flex-direction: column;
 }
 
 .checkout__cart__item__text h5 {
-  margin: 0 0 5px 0;  /* Removes margin around the h5 and adds space below */
-  font-size: 18px;  /* Adjust font size as needed */
+  margin: 0 0 5px 0;
+  font-size: 18px;
 }
 
 .checkout__cart__item__text p {
-  margin: 0;  /* Removes margin from paragraph */
-  font-size: 16px;  /* Adjust font size as needed */
+  margin: 0;
+  font-size: 16px;
 }
-
-
-.shipping-info table, .shipping-info th, .shipping-info td {
-  border-collapse: collapse; /* Ensures that table borders are collapsed into a single border */
-  border-spacing: 0; /* Removes space between cells */
-}
-
-
-.checkout__input__checkbox label input:checked ~ .checkmark {
-  background: #00b307;
-  border-color: #00b307;
-}
-
-.checkout__input__checkbox label input:checked ~ .checkmark:after {
-  opacity: 1;
-}
-
-.order-summary button {
-  background:#00b307;
-  padding: 10px 25px;
-  border: none;
-  height: 44px;
-  margin-top:10px;
-  width:97%;
-  outline:none;
-  color:#fff;
-  letter-spacing:1px;
-  cursor: pointer; /* Adjust this value to increase or decrease the curvature */
-}
-.payment-method {
-  text-align: left;  /* Ensures text alignment is consistent */
-  margin: 20px 0;  /* Adds some margin for spacing */
-}
-
-.payment-method label {
-  display: block;  /* Makes each label block-level so they stack vertically */
-  margin-bottom: 10px;  /* Space between each payment method */
-  cursor: pointer;  /* Changes the cursor to a pointer to indicate it's clickable */
-}
-
-.place-order-btn {
-  background-color: #4CAF50;  /* Green background color */
-  color: white;  /* White text */
-  border: none;  /* No border */
-  padding: 10px 20px;  /* Padding inside the button */
-  border-radius: 5px;  /* Rounded corners */
-  cursor: pointer;  /* Changes cursor to indicate it's clickable */
-  font-size: 16px;  /* Font size of the text inside the button */
-  width: 100%;  /* Makes the button expand to the full width of its container */
-}
-
-
 
 .discount-wrapper {
   display: flex;
-  align-items: center; /* Ensures vertical alignment in the middle */
-  margin-top: 20px; /* Adds some space above the wrapper */
-  gap: 10px; /* Ensures space between input and button */
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
 }
 
 .discount-input {
-  flex-grow: 1; /* Ensures input takes the remaining width of the container */
-  padding: 10px; /* Adjusts padding for aesthetics and to match button height */
-  border: 1px solid #ccc; /* Adds a border to the input */
-  border-radius: 4px; /* Rounds the corners of the input field */
-  font-size: 16px; /* Adjusts font size for better readability */
-  color: black; /* Ensures text color is black */
-  height: 44px; /* Matches the height of the button */
-  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: black;
+  height: 44px;
+  box-sizing: border-box;
   line-height: 24px;
   margin-top: 10px;
   flex-shrink: 0;
 }
 
 .apply-btn {
-  padding: 10px 15px; /* Reduces padding inside the button to make it narrower */
-  background-color: #4CAF50; /* Green background color */
-  color: white; /* White text */
-  border: none; /* No border */
-  border-radius: 4px; /* Rounded corners of the button */
-  cursor: pointer; /* Changes the cursor to indicate it's clickable */
-  font-size: 16px; /* Font size of the text inside the button */
-  height: 44px; /* Explicit height to match the input field */
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  height: 44px;
   line-height: 24px;
   margin: 0;
-  
 }
 
-
-
-
-
-/* Adjust the width of the discount input to ensure proper alignment with other fields */
-.discount-input {
-  width: calc(100% - 130px); /* Adjust width taking button width into account */
-}
-
-
-/* Additional styling to handle the total display */
-.total-display {
-  font-size: 18px;  /* Larger text for the total */
-  font-weight: bold;  /* Makes the total text bold */
-/* Space above the total text */
-}
-
-.checkout__order_ button {
-  background:#00b307;
+.order-summary button, .checkout__order_ button {
+  background: #00b307;
   padding: 10px 25px;
   border: none;
   height: 44px;
-  margin-top:10px;
-  width:97%;
-  outline:none;
-  color:#fff;
-  letter-spacing:1px;
+  margin-top: 10px;
+  width: 97%;
+  outline: none;
+  color: #fff;
+  letter-spacing: 1px;
   cursor: pointer;
-
-}
-.checkout__order_input  input{
-  width: 60%;
-  height: 40px;
-  border: 1px solid #ebebeb;
-  padding-left: 20px;
-  font-size: 16px;
-  color: #010000;
-  border-radius: 4px;
 }
 
-.checkout__order_input input::placeholder {
-  color: #b2b2b2;
-}
 .checkout__order__subtotal,
 .checkout__order__shipfee,
 .checkout__order__discount,
-.checkout__order_input,
 .checkout__order__total,
 .checkout__input__checkbox {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-.checkout__order__price, .checkout__order__subtotal span, .checkout__order__discount span,.checkout__order__shipfee span, .checkout__order__total span {
+
+.checkout__order__subtotal span,
+.checkout__order__shipfee span,
+.checkout__order__discount span,
+.checkout__order__total span {
   float: right;
 }
-.checkout__order__total span{
-  color:#00b307;
-  
+
+.checkout__order__total span {
+  color: #00b307;
 }
+
+.payment-method {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.payment-method label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.place-order-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
 .navigation-bar {
   margin-top: 20px;
   padding-left: 20px;
   display: flex;
   align-items: center;
   background-image: url('../../../../assets/image/navback.png');
-  background-size: 1900px 120px; /* Chỉnh kích thước của background */
+  background-size: 1900px 120px;
   background-repeat: no-repeat;
   position: relative;
-  height: 120px; /* Đặt chiều cao cố định */
+  height: 120px;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #CCCCCC; /* Chỉnh màu chữ thành trắng */
+  color: #CCCCCC;
   margin-right: 5px;
 }
 
@@ -362,5 +225,5 @@ form {
 
 .separator {
   margin-right: 5px;
-  color: #CCCCCC; /* Chỉnh màu chữ của dấu ">" thành trắng */
+  color: #CCCCCC;
 }
