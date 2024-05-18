@@ -16,7 +16,7 @@ export class ProductService {
 	updateProduct: EventEmitter<any> = new EventEmitter<any>();
 	searchProduct: EventEmitter<any> = new EventEmitter<any>();
 
-	apiUrl = 'http://localhost:3002/api/products';
+	apiUrl = 'https://plantique-api.onrender.com/api/products';
 
 	addNewProduct(productData: any): Observable<any> {
 		return this.http.post(`${this.apiUrl}/addnew`, productData);
@@ -27,7 +27,7 @@ export class ProductService {
 	}
 
 	uploadImage(formData: FormData) {
-		return this.http.post('http://localhost:3002/upload', formData);
+		return this.http.post('https://plantique-api.onrender.com/upload', formData);
 	}
 
 	uploadProduct(id: any, product: any) {
