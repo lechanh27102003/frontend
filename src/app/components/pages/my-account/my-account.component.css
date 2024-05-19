@@ -71,6 +71,7 @@ li {
   display: block;
   padding: 20px;
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 .sidebar-area a.active, a:hover {
