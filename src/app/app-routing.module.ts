@@ -41,6 +41,7 @@ import { ResetComponent } from './components/pages/reset/reset.component';
 import { SlideShowComponent } from './components/partials/slide-show/slide-show.component';
 import { TermsComponent } from './components/pages/terms/terms.component';
 import { InspectionComponent } from './components/pages/inspection/inspection.component';
+import { AdminContactComponent } from './components/pages/admin/pages/admin-contact/admin-contact.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,7 @@ const routes: Routes = [
       { path: 'blog', component: BlogComponent },
       { path: 'authority', component: AuthorityComponent },
       { path: 'fb-popup',component: FbPopupComponent},
+      { path: 'admin-contact', component: AdminContactComponent },
       { path: 'admin-contact-details/:id', component: ContactDetailsComponent },
      
       
