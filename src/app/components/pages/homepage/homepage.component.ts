@@ -30,19 +30,17 @@ export class HomepageComponent implements OnInit {
     private cartService: CartService, private toast: NgToastService,
     private router: Router) {}
 
-  contentTitle: string = "Chỉ trong tuần này";
-  contentSubtitle: string = "Miễn phí giao hàng";
 
 
   ngOnInit(): void {
     this.getListCategory()
     this.getProducts();
   }
-  calculatePrice(product: any) {
-		if (product.discount != null)
-			this.discountPrice = Math.round(product.price * (1 - this.product.discount / 100));
-		else
-			this.discountPrice = product.price;
+  getDiscountPrice(product: any): number {
+    return product.price - (product.price * (product.discount / 100));
+  }
+  onCardClick(productId: string) {
+		this.router.navigate(['/product-detail', productId]);
 	}
   getProducts() {
     this.http.get('https://plantique-api.onrender.com/api/products/getall/0').subscribe({

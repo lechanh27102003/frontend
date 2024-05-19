@@ -75,21 +75,23 @@
     justify-content: center;
     align-items: center;
 }
-
-.product-card {
+.product-card{
     position: relative;
     width: 300px;
     height: 350px;
     margin: 20px;
     border-radius: 20px;
     transition: 0.5s;
+    transition-delay: 0.5s;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-.product-card:hover {
+.product-card:hover{
     width: 600px;
+    transition-delay: 0s;
 }
 
 .circle {
@@ -121,14 +123,16 @@
     clip-path: circle(400px at center);
 }
 
-.product-card .circle .logo {
+.product-card .circle .logo{
     position: relative;
-    width: 200px;
+    width:200px;
     transition: 0.5s;
+    transition-delay: 0.5s;
 }
 
 .product-card:hover .circle .logo {
     transform: scale(0);
+    transition-delay: 0s;
 }
 
 .contact {
@@ -144,6 +148,7 @@
     left: 0;
     opacity: 1;
     visibility: visible;
+    transition-delay: 0.5s;
 }
 
 .contact h2 {
@@ -189,6 +194,61 @@
     grid-column-gap: 3px;
     margin: 0 auto;
     max-width: 1200px;
+}
+
+.productcard {
+    width: 250px;
+    margin: 15px;
+    padding: 10px;
+	position: relative;
+    transition: transform 0.3s ease;  
+}
+
+.productcard:hover {
+    transform: translateY(-5px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(53, 93, 53, 0.3);
+    cursor: pointer;
+    transition: filter 0.3s ease, background-color 0.3s ease;
+
+}
+.discount-price {
+	font-size: larger;
+	color: #00b307;
+
+}
+
+.star-rating-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure it takes the full width */
+    align-items: center;
+}
+
+.star-rating {
+	display: flex;
+}
+
+.fa-star {
+	color: #ccc;
+}
+
+.filled {
+	color: gold;
+}
+
+.cart {
+	padding: 10px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	margin-top: 7px;
+	transition: transform 0.3s;
+}
+.cart:hover {
+	transform: scale(1.2); /* Enlarge icon on hover */
+	background-color: #00b307; /* Change color on hover */
+	cursor: pointer;
 }
 
 /* About section styles */
@@ -273,4 +333,35 @@
     height: auto;
     margin: 0 auto;
     background-image: url(../../../../assets/image/line.png);
+}
+.foot img{
+    opacity: 0;
+}
+
+.container{
+    margin-bottom:-65px;
+    overflow: hidden;
+}
+
+.line{
+    position: relative;
+    z-index: -1;
+    opacity: 0;
+}
+
+.testimonial{
+    background-image: url(../../../../assets/image/bg.png);
+    background-size: cover;
+    padding-bottom:20px ;
+    max-width: 100%;
+}
+
+.testimonial h2{
+    position: absolute;
+    z-index: 1;
+    font-size: 300%;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
 }
