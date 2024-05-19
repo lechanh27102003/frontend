@@ -23,7 +23,7 @@ import { ProductClientComponent } from './components/pages/product/product.compo
 import { ProductDetailComponent } from './components/pages/product/product-detail/product-detail.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { OrderDetailsComponent } from './components/pages/admin/pages/order-details/order-details.component';
-import { AdminContactComponent } from './components/pages/admin/pages/admin-contact/admin-contact.component';
+import { ContactDetailsComponent } from './components/pages/admin/pages/admin-contact/contact-details/contact-details.component';
 import { ShippingInfoComponent } from './components/pages/shipping-info/shipping-info.component';
 import { OrderConfirmationComponent } from './components/pages/order-confirmation/order-confirmation.component';
 import { ClientComponent } from './components/pages/client/client.component';
@@ -35,7 +35,6 @@ import { OrderHistoryComponent } from './components/pages/order-history/order-hi
 import { ClientOrderDetailsComponent } from './components/pages/client-order-details/client-order-details.component';
 import { QrCodeDialogComponent } from './components/pages/qr-code-dialog/qr-code-dialog.component';
 import { OrderSuccessDialogComponent } from './components/pages/order-success-dialog/order-success-dialog.component';
-import { AdminContactDetailsComponent } from './components/pages/admin/pages/admin-contact-details/admin-contact-details.component';
 import { SingleBlogComponent } from './components/pages/single-blog/single-blog.component';
 import { ForgetPasswordComponent } from './components/pages/forget-password/forget-password.component';
 import { ResetComponent } from './components/pages/reset/reset.component';
@@ -55,7 +54,7 @@ const routes: Routes = [
       { path: 'blog', component: BlogComponent },
       { path: 'authority', component: AuthorityComponent },
       { path: 'fb-popup',component: FbPopupComponent},
-      { path: 'admin-contact', component: AdminContactComponent},
+      { path: 'admin-contact-details/:id', component: ContactDetailsComponent },
      
       
     ]
@@ -99,7 +98,6 @@ const routes: Routes = [
       { path: 'order-success', component: OrderSuccessDialogComponent},
       { path: 'shipping-info', component: ShippingInfoComponent },
       { path: 'order-confirmation', component: OrderConfirmationComponent },
-      { path: 'admin-contact-details/:id', component: AdminContactDetailsComponent },
       { path: 'slide-show', component:SlideShowComponent},
       {path:'order-search',component:OrderSearchComponent},
       { path: 'single-blog/:id', component: SingleBlogComponent },

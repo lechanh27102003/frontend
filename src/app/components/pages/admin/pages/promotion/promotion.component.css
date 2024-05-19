@@ -249,6 +249,31 @@ button:active {
     justify-content: center;
     align-items: center;
 }
+/* Centering and spacing the popup buttons */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-option {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.popup h2 {
+    margin-bottom: 20px;
+}
+
+/* Ensure buttons are centered within their containers */
+.popup-option button {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .popup,
 .modal-dialog {

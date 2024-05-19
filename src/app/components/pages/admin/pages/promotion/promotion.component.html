@@ -102,36 +102,41 @@
         </div>
       </div>
       <div class="overlay" *ngIf="popupService.showOverlay">
-          <div class="popup" id="popupContainer">
-              <div>
-                  <h2>Add Promotion</h2>
-                  <button class="option1" (click)="openCreateCode()">
-                      <table>
-                          <tr>
-                              <td rowspan="2"><i class="fas fa-code"></i></td>
-                              <td>
-                                  <h3>Add Promotion Code</h3>
-                                  <p>Customers will enter this discount code when making payment</p>
-                              </td>
-                          </tr>
-                      </table>
-                  </button>
-                  <button class="option2" (click)="openCreateCampaign()">
-                      <table>
-                          <tr>
-                              <td rowspan="2"><i class="fas fa-tags"></i></td>
-                              <td>
-                                  <h3>Add Promotion Campaign</h3>
-                                  <p>Customers will receive an automatic discount on their order</p>
-                              </td>
-                          </tr>
-                      </table>
-                  </button>
-                  <button class="close-btn" (click)="closePopup()">Close</button>
-              </div>
-          </div>
-      </div>
-
+        <div class="popup" id="popupContainer">
+            <div class="popup-content">
+                <h2>Add Promotion</h2>
+                <div class="popup-option">
+                    <button class="option1" (click)="openCreateCode()">
+                        <table>
+                            <tr>
+                                <td rowspan="2"><i class="fas fa-code"></i></td>
+                                <td>
+                                    <h3>Add Promotion Code</h3>
+                                    <p>Customers will enter this discount code when making payment</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </button>
+                </div>
+                <div class="popup-option">
+                    <button class="option2" (click)="openCreateCampaign()">
+                        <table>
+                            <tr>
+                                <td rowspan="2"><i class="fas fa-tags"></i></td>
+                                <td>
+                                    <h3>Add Promotion Campaign</h3>
+                                    <p>Customers will receive an automatic discount on their order</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </button>
+                </div>
+                <div class="popup-option">
+                    <button class="close-btn" (click)="closePopup()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
       
       <div class="modal" tabindex="-1" role="dialog" id="promotionModal" *ngIf="showDetails && selectedCode">
           <div class="modal-dialog" role="document">

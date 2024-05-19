@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-contact',
   templateUrl: './admin-contact.component.html',
-  styleUrl: './admin-contact.component.css'
+  styleUrls: ['./admin-contact.component.css']
 })
 export class AdminContactComponent implements OnInit {
   contacts: Contact[] = [];
@@ -23,6 +23,14 @@ export class AdminContactComponent implements OnInit {
       },
       
     });
+  }
+
+  openContactDetails(contactId: string | undefined): void {
+    if (contactId) {
+      this.router.navigate(['/admin/admin-contact-details', contactId]);
+    } else {
+      console.error('Invalid contact ID');
+    }
   }
   
   formatDateString(dateString?: Date): string {

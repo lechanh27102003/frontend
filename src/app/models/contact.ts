@@ -7,5 +7,7 @@ export interface Contact {
   status?: string;
   sentDate?: Date;
   responseDate?: Date;
+  responseMessage?: string;
+
   }
   

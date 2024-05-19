@@ -58,7 +58,6 @@ import { OrderHistoryComponent } from './components/pages/order-history/order-hi
 import { ClientOrderDetailsComponent } from './components/pages/client-order-details/client-order-details.component';
 import { QrCodeDialogComponent } from './components/pages/qr-code-dialog/qr-code-dialog.component';
 import { OrderSuccessDialogComponent } from './components/pages/order-success-dialog/order-success-dialog.component';
-import { AdminContactDetailsComponent } from './components/pages/admin/pages/admin-contact-details/admin-contact-details.component';
 import { ForgetPasswordComponent} from './components/pages/forget-password/forget-password.component';
 import { ResetComponent } from './components/pages/reset/reset.component';
 
@@ -74,7 +73,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectionList } from '@angular/material/list';
 import { TermsComponent } from './components/pages/terms/terms.component';
-import { InspectionComponent } from './components/pages/inspection/inspection.component'
+import { InspectionComponent } from './components/pages/inspection/inspection.component';
+import { ContactDetailsComponent } from './components/pages/admin/pages/admin-contact/contact-details/contact-details.component'
 
 
 
@@ -125,7 +125,6 @@ import { InspectionComponent } from './components/pages/inspection/inspection.co
     QrCodeDialogComponent,
     OrderSuccessDialogComponent,
     AdminContactComponent,
-    AdminContactDetailsComponent,
     BubbleContactComponent,
     CreateCampaignComponent,
     CreateCodeComponent,
@@ -135,6 +134,7 @@ import { InspectionComponent } from './components/pages/inspection/inspection.co
     CouponCardComponent,
     TermsComponent,
     InspectionComponent,
+    ContactDetailsComponent,
   ],
   exports: [
         

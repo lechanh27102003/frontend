@@ -1,0 +1,19 @@
+<div class="container" *ngIf="contact">
+    <h2>Contact Details</h2>
+    <p><strong>Name:</strong> {{ contact.name }}</p>
+    <p><strong>Email:</strong> {{ contact.email }}</p>
+    <p><strong>Phone:</strong> {{ contact.phone }}</p>
+    <p><strong>Message:</strong> {{ contact.message }}</p>
+    <p><strong>Date Sent:</strong> {{ contact.sentDate | date:'short' }}</p>
+    <p><strong>Date Responsed:</strong> {{ contact.responseDate | date:'short' }}</p>
+    <p><strong>Status:</strong> {{ contact.status }}</p>
+    <p><strong>Response Message:</strong> {{ contact.responseMessage }}</p>
+
+    <div *ngIf="contact.status !== 'Responsed'">
+      <textarea [(ngModel)]="responseMessage" placeholder="Enter your response here..."></textarea>
+      <button (click)="onUpdateStatus()">Update to Responsed</button>
+    </div>
+  </div>
+  <div *ngIf="!contact">
+    <p>Loading contact details...</p>
+  </div>

@@ -56,6 +56,9 @@ export class HomepageComponent implements OnInit {
         console.log(err);}
     })
   }
+  navigateToHighlightProduct(productId: string): void {
+    this.router.navigate(['/product-client', productId]);
+  }
   getListCategory() {
     this.http.get('https://plantique-api.onrender.com/api/categories').subscribe({
       next:res =>{
