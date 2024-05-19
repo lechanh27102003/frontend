@@ -1,7 +1,7 @@
 <div class="sidebar" [ngClass]="{'close': sidebarService.isSidebarClosed}">
   <div class="logo">
     <i class="fab fa-trade-federation"></i>
-    <span class="logo-name">Plantique</span>
+    <span class="text" [class.hide-text]="sidebarService.isSidebarClosed">Plantique</span>
   </div>
 
   <ul class="nav-list">
