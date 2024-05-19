@@ -82,6 +82,6 @@ export class OrderComponent implements OnInit {
   }
 
   goToOrderDetails(orderId: string) {
-    this.router.navigate(['/order-details', orderId]);
+    this.router.navigate(['/admin/order-details', orderId]);
   }
 }

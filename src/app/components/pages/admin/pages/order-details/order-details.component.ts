@@ -25,7 +25,7 @@ export class OrderDetailsComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if (id === null) {
       console.error('Order ID is missing');
-      this.router.navigate(['/orders']); // Chuyển hướng nếu không có ID
+      this.router.navigate(['/admin/orders']); // Chuyển hướng nếu không có ID
       return;
     }
     this.orderService.getOrderById(id).subscribe(order => {
@@ -49,7 +49,7 @@ export class OrderDetailsComponent implements OnInit {
       return;
     }
     this.orderService.updateOrder(id, this.order).subscribe(() => {
-      this.router.navigate(['/order']);
+      this.router.navigate(['/admin/orders']);
       alert('Order updated successfully!');
     }, error => {
       console.error('Error updating order:', error);

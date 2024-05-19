@@ -57,7 +57,7 @@ const routes: Routes = [
       { path: 'fb-popup',component: FbPopupComponent},
       { path: 'admin-contact', component: AdminContactComponent },
       { path: 'admin-contact-details/:id', component: ContactDetailsComponent },
-     
+      { path: 'order-details/:id', component: OrderDetailsComponent },
       
     ]
   },
@@ -95,7 +95,6 @@ const routes: Routes = [
       { path: 'product-client/:id', component: ProductClientComponent },
       { path: 'product-detail/:id', component: ProductDetailComponent },
       { path: 'contact', component: ContactComponent },
-      { path: 'order-details/:id', component: OrderDetailsComponent },
       { path: 'qr-code', component: QrCodeDialogComponent},
       { path: 'order-success', component: OrderSuccessDialogComponent},
       { path: 'shipping-info', component: ShippingInfoComponent },
