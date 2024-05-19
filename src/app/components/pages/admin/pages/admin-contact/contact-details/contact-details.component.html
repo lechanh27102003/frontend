@@ -5,13 +5,13 @@
     <p><strong>Phone:</strong> {{ contact.phone }}</p>
     <p><strong>Message:</strong> {{ contact.message }}</p>
     <p><strong>Date Sent:</strong> {{ contact.sentDate | date:'short' }}</p>
-    <p><strong>Date Responsed:</strong> {{ contact.responseDate | date:'short' }}</p>
+    <p><strong>Date Responded:</strong> {{ contact.responseDate | date:'short' }}</p>
     <p><strong>Status:</strong> {{ contact.status }}</p>
     <p><strong>Response Message:</strong> {{ contact.responseMessage }}</p>
 
-    <div *ngIf="contact.status !== 'Responsed'">
+    <div *ngIf="contact.status !== 'Responded'">
       <textarea [(ngModel)]="responseMessage" placeholder="Enter your response here..."></textarea>
-      <button (click)="onUpdateStatus()">Update to Responsed</button>
+      <button (click)="onUpdateStatus()">Update to Responded</button>
     </div>
   </div>
   <div *ngIf="!contact">

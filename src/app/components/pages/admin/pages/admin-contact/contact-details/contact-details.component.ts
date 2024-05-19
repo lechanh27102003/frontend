@@ -38,14 +38,14 @@ export class ContactDetailsComponent implements OnInit {
     if (this.contact?._id) {
       console.log('Updating contact ID:', this.contact._id); // Log the contact ID being updated
       this.contactService.updateContact(this.contact._id, {
-        status: 'Responsed',
+        status: 'Responded',
         responseDate: new Date(),
         responseMessage: this.responseMessage
       }).subscribe({
         next: () => {
           console.log('Contact status updated'); // Log successful update
           if (this.contact) {
-            this.contact.status = 'Responsed';
+            this.contact.status = 'Responded';
             this.contact.responseDate = new Date();
           }
         },

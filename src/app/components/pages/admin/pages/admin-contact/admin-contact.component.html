@@ -15,7 +15,7 @@
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Date Sent</th>
-                <th>Date Responsed</th>
+                <th>Date Responded</th>
                 <th>Status</th>
               </tr>
             </thead>
@@ -27,7 +27,7 @@
                 <td>{{ contact.phone }}</td>
                 <td>{{ formatDateString(contact.sentDate) }}</td>
                 <td>{{ formatDateString(contact.responseDate) }}</td>
-                <td><span [class.status]="true" [class.Waiting]="contact.status === 'Waiting'" [class.Responsed]="contact.status === 'Responsed'">{{ contact.status }}</span></td>
+                <td><span [class.status]="true" [class.Waiting]="contact.status === 'Waiting'" [class.Responded]="contact.status === 'Responded'">{{ contact.status }}</span></td>
               </tr>
             </tbody>
           </table>
